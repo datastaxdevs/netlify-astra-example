@@ -26,14 +26,8 @@ export default class Footer extends Component {
     const { filter: selectedFilter, onShow } = this.props;
 
     return (
-      <a
-        href = "#"
-        className={classnames({ selected: filter === selectedFilter })}
-        style={{ cursor: "pointer" }}
-        onClick={() => onShow(filter)}
-      >
-        {title}
-      </a>
+      <button className={classnames({ selected: filter === selectedFilter })}
+      onClick={() => onShow(filter)} style={{ cursor: "pointer" }}>{title}</button>
     );
   }
 
