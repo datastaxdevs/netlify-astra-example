@@ -31,11 +31,12 @@ TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
 4. Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  For this example you should use "netlify" and "todos".
 
 The Netlify deploy button will create a new repository for you on Github, create a site on Netlify, and link the two together.
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
 This will take a few minutes.
 
-6. Clone your new repository into your development workspace after the build is done on Netlify.
+6. Clone your new repository into your development workspace after the build is done on Netlify.  theres a github button on the deploy screen you can use.
 
 7. In your local terminal, run `netlify login` to connect to the service.
 
