@@ -48,31 +48,24 @@ Let's do some initial setup by creating a serverless(!) database.
 3. Clone the repository:
 ![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/github-clone.png)
 
-## 🚀 Getting Started Paths:
-*Make sure you've completed the [prerequisites](#prerequisites) before starting this step*
-  - [Running on your local machine](#running-on-your-local-machine)
-  - [Deploying to Netlify](#deploying-to-netlify)
-
-### Running on your local machine
-1. `cd` to the cloned repository, and install Node dependencies: `npm install`.
-
-2. In the cloned repository, build the app: `npm run dev`.
-
-2. Open http://localhost:8080 to view your application:
-![image](https://user-images.githubusercontent.com/3254549/88739693-fdadac00-d0ef-11ea-9f95-d2ee643b5431.png)
-
-### Deploying to Netlify
-1. Click the 'Deploy to Netlify' button:
+4. Click the 'Deploy to Netlify' button:
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
-2. Connect your GitHub account:
+5. Connect your GitHub account:
 ![image](https://user-images.githubusercontent.com/3254549/88744656-d9a49780-d0fc-11ea-97ad-f05aa0ace11e.png)
 
-3. In your local terminal, run `netlify login` to connect to the service.
+6. In your local terminal, run `netlify login` to connect to the service.
 
-4. Link your repository to the site you created with `netlify link`
+7. Link your repository to the site you created with `netlify link`
 
-6. Click your Netlify app link to view your live app:
+8. Build your application `netlify build`
+
+9. Run the application `netlify dev`
+
+10. Open http://localhost:8080 to view your application:
+![image](https://user-images.githubusercontent.com/3254549/88739693-fdadac00-d0ef-11ea-9f95-d2ee643b5431.png)
+
+11. Click your Netlify app link to view your live app:
 ![image](https://user-images.githubusercontent.com/3254549/88744822-4fa8fe80-d0fd-11ea-97dd-9f9611b332dc.png)
 
 7. You've deployed your app to Netlify!
