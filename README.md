@@ -35,9 +35,14 @@ Let's do some initial setup by creating a serverless(!) database.
 4. Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  For this example you should use "netlify" and "todos".
 ![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db.png)
 
+5. Your Astra DB will be ready when the status will change from *`Pending`* to **`Active`** 💥💥💥 
+![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-db-active.png)
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
-6. In your local terminal, run `netlify login` to connect to the service.
+6. Clone your new repository into your development workspace.
+
+7. In your local terminal, run `netlify login` to connect to the service.
 
 7. Link your repository to the site you created with `netlify link`
 
@@ -54,6 +59,7 @@ Let's do some initial setup by creating a serverless(!) database.
     * Launch your site using the URL in the list
 
 7. You've deployed your app to Netlify!
+![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:
  - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
