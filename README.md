@@ -23,24 +23,19 @@ Follow the instructions below to get started.
 Let's do some initial setup by creating a serverless(!) database.
 
 ### DataStax Astra
+
+TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
+
 1. Create a [DataStax Astra account](https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify) if you don't already have one:
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-register-basic-auth.png)
-
-2. On the home page. Locate the button **`Create Database`**
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-dashboard.png)
-
-3. Locate the **`Get Started`** button to continue
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-select-plan.png)
 
 4. Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  For this example you should use "netlify" and "todos".
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db.png)
 
-5. Your Astra DB will be ready when the status will change from *`Pending`* to **`Active`** 💥💥💥 
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-db-active.png)
-
+The Netlify deploy button will create a new repository for you on Github, create a site on Netlify, and link the two together.
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
-6. Clone your new repository into your development workspace.
+This will take a few minutes.
+
+6. Clone your new repository into your development workspace after the build is done on Netlify.
 
 7. In your local terminal, run `netlify login` to connect to the service.
 
