@@ -35,24 +35,7 @@ Let's do some initial setup by creating a serverless(!) database.
 4. Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  For this example you should use "netlify" and "todos".
 ![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-create-db.png)
 
-5. Your Astra DB will be ready when the status will change from *`Pending`* to **`Active`** 💥💥💥 
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/astra-db-active.png)
-
-### Github
-1. Click `Use this template` at the top of the [GitHub Repository](https://github.com/DataStax-Examples/todo-astra-jamstack-netlify):
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/github-use-template.png)
-
-2. Enter a repository name and click 'Create repository from template':
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/github-create-repository.png)
-
-3. Clone the repository:
-![image](https://raw.githubusercontent.com/DataStax-Examples/sample-app-template/master/screenshots/github-clone.png)
-
-4. Click the 'Deploy to Netlify' button:
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
-
-5. Connect your GitHub account:
-![image](https://user-images.githubusercontent.com/3254549/88744656-d9a49780-d0fc-11ea-97ad-f05aa0ace11e.png)
 
 6. In your local terminal, run `netlify login` to connect to the service.
 
@@ -60,16 +43,17 @@ Let's do some initial setup by creating a serverless(!) database.
 
 8. Build your application `netlify build`
 
+9. Set your environment variables on the Netlify site: `netlify env:import`
+
 9. Run the application `netlify dev`
 
 10. Open http://localhost:8080 to view your application:
-![image](https://user-images.githubusercontent.com/3254549/88739693-fdadac00-d0ef-11ea-9f95-d2ee643b5431.png)
 
-11. Click your Netlify app link to view your live app:
-![image](https://user-images.githubusercontent.com/3254549/88744822-4fa8fe80-d0fd-11ea-97dd-9f9611b332dc.png)
+11. Open your Netlify site in the browser: 
+    * Run `netlify sites:list` to find your site URL
+    * Launch your site using the URL in the list
 
 7. You've deployed your app to Netlify!
-![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:
  - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
