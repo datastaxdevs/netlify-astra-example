@@ -46,8 +46,7 @@ This will take a few minutes.  You can watch the build and wait until it has dep
 
 7. In the repository directory, run `npm install`
 
-8. In the repository directory, run `npm exec astra-setup` to set up your Astra environment
-   This does the following:
+8. In the repository directory, run astra-setup to set up your Astra environment
 <details>
   <summary>What does astra-setup do?</summary>
       To setup your ASTRA instance, you want to run `npm exec astra-setup`
@@ -69,6 +68,8 @@ This will take a few minutes.  You can watch the build and wait until it has dep
       You can run the script and tell it which database/keyspace to use by using:
       `npm exec astra-setup databasename keyspacename`
 </details>
+
+`npm exec astra-setup netlify todos`
 
 9. Next you will run `npm exec astra-netlify` to connect your workspace to your netlify site.
 <details>
