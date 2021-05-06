@@ -47,12 +47,12 @@ This will take a few minutes.
 
   * When you see "Pushing to repository " you're ready to move on.  Scroll up to the top and click on the site name (it'll be after <yourlogin>'s Team next to the Netlify button).
 
+3. Clone your GitHub repository
   * Click on the 'GitHub' in "Deploys from GitHub' to get back to your new repository.  Scroll to where you were in the README.
 
-{{GITHUB_REPO}}
-  * Clone this repository to your local system with `git clone https://github.com/{{github_user}}/{{github_repo}}`
+  * Clone this repository to your local system by clicking the "Code" button, copying the link, and running `git clone {repo}`
 
-3. Clone your new repository into your development workspace after the build is done on Netlify.
+  * Change into your repository directory `cd {repo}`
 
 7. In the repository directory, run `npm install`
 
@@ -81,17 +81,11 @@ This will take a few minutes.
 
 `npm exec astra-setup netlify todos`
 
-9. Next you will run `npm exec astra-netlify` to connect your workspace to your netlify site.
-<details>
-  <summary>What does astra-netlify do?</summary>
-      To connect your workspace to netlify, you want to run `npm exec astra-netlify`
-
-      This will do the following:
-      * `netlify login` - if the script doesn't work with this because you are in a hosted environment, you can run `netlify login` first.
+9. Next you will run some commands to connect netlify to your site.
+      * `netlify login` - this will pop up a browser to authenticate with netlify.  
       * `netlify link` - this will link your workspace to the associated site
       * `netlify env: import` - this will take the .env file created by astra-setup and upload it to netlify.
       * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open`
-</details>
 
 10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
 
