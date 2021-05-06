@@ -38,23 +38,25 @@ This will take a few minutes.
 
 6. Clone your new repository into your development workspace after the build is done on Netlify.  theres a github button on the deploy screen you can use.
 
-7. In your local terminal, run `netlify login` to connect to the service.
+7. Get your npm requirements: `npm install`
 
-7. Link your repository to the site you created with `netlify link`
+8. In your local terminal, run `netlify login` to connect to the service.
 
-8. Build your application `netlify build`
+9. Link your repository to the site you created with `netlify link`
 
-9. Set your environment variables on the Netlify site: `netlify env:import`
+10. Build your application `netlify build`
 
-9. Run the application `netlify dev`
+11. Set your environment variables on the Netlify site: `netlify env:import`
 
-10. Open http://localhost:8080 to view your application:
+12. Run the application `netlify dev`
 
-11. Open your Netlify site in the browser: 
+13. Open http://localhost:8080 to view your application:
+
+14. Open your Netlify site in the browser: 
     * Run `netlify sites:list` to find your site URL
     * Launch your site using the URL in the list
 
-7. You've deployed your app to Netlify!
+15. You've deployed your app to Netlify!
 ![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:

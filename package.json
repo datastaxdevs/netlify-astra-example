@@ -7,14 +7,16 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "astra-netlify-connect": "^0.0.2",
+    "astra-setup": "^0.1.1",
     "classnames": "^2.2.6",
     "netlify-plugin-astra": "^0.1.2",
     "node-uuid": "^1.4.8",
+    "npx": "^10.2.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "todomvc-app-css": "^2.0.6",
-    "netlify-plugin-astra": "^0.1.2"
+    "todomvc-app-css": "^2.0.6"
   },
   "scripts": {
     "dev": "netlify dev",
