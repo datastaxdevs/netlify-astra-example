@@ -30,7 +30,7 @@ TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
 
 2. Deploy to Netlify
 <details>
-<summary> What does the netlify deploy button do?
+<summary> What does the netlify deploy button do?</summary>
 
     The Netlify deploy button will:
     * Create a new repository for you on Github
