@@ -40,7 +40,16 @@ TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
-This will take a few minutes.  You can watch the build and wait until it has deployed back to github.
+
+This will take a few minutes.
+
+  * Click on "Site deploy in progress", then the top deploy link to see the build process.
+
+  * When you see "Pushing to repository " you're ready to move on.  Scroll up to the top and click on the site name (it'll be after <yourlogin>'s Team next to the Netlify button).
+
+  * Click on the 'GitHub' in "Deploys from GitHub' to get back to your new repository.  Scroll to where you were in the README.
+
+  * Clone this repository to your local system with `git clone https://github.com/{{github_user}}/{{github_repo}}`
 
 3. Clone your new repository into your development workspace after the build is done on Netlify.
 
