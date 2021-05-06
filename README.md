@@ -49,6 +49,7 @@ This will take a few minutes.
 
   * Click on the 'GitHub' in "Deploys from GitHub' to get back to your new repository.  Scroll to where you were in the README.
 
+{{github_repo}}
   * Clone this repository to your local system with `git clone https://github.com/{{github_user}}/{{github_repo}}`
 
 3. Clone your new repository into your development workspace after the build is done on Netlify.
