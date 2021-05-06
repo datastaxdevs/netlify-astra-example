@@ -24,8 +24,6 @@ Let's do some initial setup by creating a serverless(!) database.
 
 ### DataStax Astra
 
-TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
-
 1. Create a [DataStax Astra account](https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify) if you don't already have one.  Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  Use what you like, the setup will create the correct database and keyspace.
 
 2. Deploy to Netlify
