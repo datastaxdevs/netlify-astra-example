@@ -38,23 +38,47 @@ This will take a few minutes.
 
 6. Clone your new repository into your development workspace after the build is done on Netlify.  theres a github button on the deploy screen you can use.
 
-7. In your local terminal, run `netlify login` to connect to the service.
+7. In the repository directory, run `npm install`
 
-7. Link your repository to the site you created with `netlify link`
+8. In the repository directory, run `npm exec astra-setup` to set up your Astra environment
+   This does the following:
+   <details>
+  <summary>What does astra-setup do?</summary>
+      To setup your ASTRA instance, you want to run `npm exec astra-setup`
 
-8. Build your application `netlify build`
+      This will do the following:
+      * Have you go to your [Astra Database](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
+         * 30 million reads
+         * 5 million writes
+         * 40 gigabytes of storage
+      * Give steps to grab a Database Administrator Token and paste it into the input field
+      * Ask you what database you want to use (default, existing, create)
+      * Create or access the database
+      * Create/update an .env file in the project root
+      * Create/update an .astrarc file in your home directory
+        * This can be used by httpie-astra `pip3 install httpie-astra`
+        * It can also be used by the @astra/collections and @astra/rest node modules
 
-9. Set your environment variables on the Netlify site: `netlify env:import`
+      ## Specify the database and keyspace
+      You can run the script and tell it which database/keyspace to use by using:
+      `npm exec astra-setup databasename keyspacename`
+</details>
 
-9. Run the application `netlify dev`
+9. Next you will run `npm exec astra-netlify` to connect your workspace to your netlify site.
+   <details>
+  <summary>What does astra-netlify do?</summary>
+      To connect your workspace to netlify, you want to run `npm exec astra-netlify`
 
-10. Open http://localhost:8080 to view your application:
+      This will do the following:
+      * `netlify login` - if the script doesn't work with this because you are in a hosted environment, you can run `netlify login` first.
+      * `netlify link` - this will link your workspace to the associated site
+      * `netlify env: import` - this will take the .env file created by astra-setup and upload it to netlify.
+      * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open`
+</details>
 
-11. Open your Netlify site in the browser: 
-    * Run `netlify sites:list` to find your site URL
-    * Launch your site using the URL in the list
+10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
 
-7. You've deployed your app to Netlify!
+11. Run `npm exec netlify-open`.  You've deployed your app to Netlify!
 ![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:
