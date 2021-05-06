@@ -26,17 +26,22 @@ Let's do some initial setup by creating a serverless(!) database.
 
 TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
 
-1. Create a [DataStax Astra account](https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify) if you don't already have one:
+1. Create a [DataStax Astra account](https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify) if you don't already have one.  Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  Use what you like, the setup will create the correct database and keyspace.
 
-4. Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  For this example you should use "netlify" and "todos".
+2. Deploy to Netlify
+<details>
+<summary> What does the netlify deploy button do?
 
-The Netlify deploy button will create a new repository for you on Github, create a site on Netlify, and link the two together.
-
+    The Netlify deploy button will:
+    * Create a new repository for you on Github
+    * Create a site on Netlify
+    * Link the two together.
+</details>
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
-This will take a few minutes.
+This will take a few minutes.  You can watch the build and wait until it has deployed back to github.
 
-6. Clone your new repository into your development workspace after the build is done on Netlify.  theres a github button on the deploy screen you can use.
+3. Clone your new repository into your development workspace after the build is done on Netlify.
 
 7. In the repository directory, run `npm install`
 
@@ -79,7 +84,6 @@ This will take a few minutes.
 10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
 
 11. Run `npm exec netlify-open`.  You've deployed your app to Netlify!
->>>>>>> 614494d217718a4e513b9dca461e237a49df90f5
 ![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:
