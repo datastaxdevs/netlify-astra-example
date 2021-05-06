@@ -65,7 +65,7 @@ This will take a few minutes.
 </details>
 
 9. Next you will run `npm exec astra-netlify` to connect your workspace to your netlify site.
-   <details>
+<details>
   <summary>What does astra-netlify do?</summary>
       To connect your workspace to netlify, you want to run `npm exec astra-netlify`
 
