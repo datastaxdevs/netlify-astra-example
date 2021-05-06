@@ -37,6 +37,7 @@ TODO: INSERT SINGING DANCING NEW ACCOUNT FLOW ANIMATED GIF
     * Create a site on Netlify
     * Link the two together.
 </details>
+
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
 This will take a few minutes.  You can watch the build and wait until it has deployed back to github.
