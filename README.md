@@ -45,7 +45,7 @@ This will take a few minutes.
 
   * Click on "Site deploy in progress", then the top deploy link to see the build process.
 
-  * When you see "Pushing to repository " you're ready to move on.  Scroll up to the top and click on the site name (it'll be after <yourlogin>'s Team next to the Netlify button).
+  * When you see "Pushing to repository " you're ready to move on.  Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
 
 3. Clone your GitHub repository
   * Click on the 'GitHub' in "Deploys from GitHub' to get back to your new repository.  Scroll to where you were in the README.
