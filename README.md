@@ -42,7 +42,7 @@ This will take a few minutes.
 
 8. In the repository directory, run `npm exec astra-setup` to set up your Astra environment
    This does the following:
-   <details>
+<details>
   <summary>What does astra-setup do?</summary>
       To setup your ASTRA instance, you want to run `npm exec astra-setup`
 
