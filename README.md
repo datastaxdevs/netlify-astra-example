@@ -53,39 +53,52 @@ This will take a few minutes.
 
   * Click on `Site deploy in progress`, 
     <details>
-    <summary>Show screenshot </summary>
+    <summary>Show me! </summary>
     ![image](/images/deploy-1.png)
     </details>
 
   * Click the top deploy link to see the build process.
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-2.png)
+    </details>
 
-![image](/images/deploy-2.png)
 
-*Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.*
-  
-![image](/images/deploy-3.png)
+  * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.*
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-3.png)
+    </details>
 
   * Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
-
-![image](/images/deploy-4.png)
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-4.png)
+    </details>
 
 3. **Clone your GitHub repository**
 
   * Click on the `GitHub` in `Deploys from GitHub` to get back to your new repository.  Scroll to where you were in the README.
-
-  ![image](/images/deploy-5.png)
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-5.png)
+    </details>
 
   * Clone this repository to your local system by clicking the `Code` button, 
-
-  ![image](/images/deploy-6.png)
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-6.png)
+    </details>
 
   * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)*
   
   ```bash
   git clone {repo_link}
   ```
-  
-![image](/images/deploy-7.png)
+    <details>
+    <summary>Show me! </summary>
+    ![image](/images/deploy-7.png)
+    </details>
 
   * Change into your repository directory 
   
