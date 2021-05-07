@@ -69,8 +69,7 @@ This will take a few minutes.
     ![image](/images/deploy-2.png)
     </details>
 
-
-  * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.*
+  * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.
     <details>
     <summary>Show me! </summary>
     ![image](/images/deploy-3.png)
@@ -97,9 +96,9 @@ This will take a few minutes.
     </details>
 
   * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)
-  ```bash
-  git clone {{repo_link}}
-  ```
+    ```bash
+    git clone {repo_link}
+    ```
     <details>
     <summary>Show me! </summary>
     ![image](/images/deploy-7.png)
