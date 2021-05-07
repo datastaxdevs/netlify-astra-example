@@ -37,7 +37,9 @@ Click the button to login or register with Datastax.
 
 
 2. **Deploy to Netlify**
-- <details><summary> What does the netlify deploy button do?</summary>The Netlify deploy button will:
+- <details>
+- <summary> What does the netlify deploy button do?</summary>
+The Netlify deploy button will:
     * Create a new repository for you on Github
     * Create a site on Netlify
     * Link the two together.
