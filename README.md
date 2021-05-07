@@ -22,7 +22,7 @@ Follow the instructions below to get started.
 ## Prerequisites
 Let's do some initial setup by creating a serverless(!) database.
 
-1. **Login/Register*
+1. **Login/Register**
 Click the button to login or register with Datastax.
 <p align="left">
 <a href="https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify">
@@ -30,7 +30,8 @@ Click the button to login or register with Datastax.
 </a>
 </p>
 
-Follow the steps as shown below
+<details>
+<summary>Show me!</summary>
 ![image](https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-db.gif?raw=true)
 
 |Field| Value|
@@ -38,7 +39,7 @@ Follow the steps as shown below
 |**database name**| `netlify` |
 |**keypace**| `example` |
 |**Cloud Provider**| *Use the one you like, click a cloud provider logo,  pick an Area in the list and finally pick a region.* |
-
+</details>
 
 2. **Deploy to Netlify**
 <details>
