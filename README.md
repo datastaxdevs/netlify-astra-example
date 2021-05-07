@@ -90,8 +90,7 @@ This will take a few minutes.
     ![image](/images/deploy-6.png)
     </details>
 
-  * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)*
-  
+  * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)
   ```bash
   git clone {repo_link}
   ```
@@ -145,8 +144,7 @@ npm exec astra-setup netlify todos
       * `netlify login` - this will pop up a browser to authenticate with netlify.  
       * `netlify link` - this will link your workspace to the associated site
       * `netlify env:import` - this will take the .env file created by astra-setup and upload it to netlify.
-      * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open`
-
+      * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open
 10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
 
 11. Run `npm exec netlify-open`.  You've deployed your app to Netlify!
