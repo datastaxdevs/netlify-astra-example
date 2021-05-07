@@ -22,10 +22,8 @@ Follow the instructions below to get started.
 ## Prerequisites
 Let's do some initial setup by creating a serverless(!) database.
 
-1. **Create your Astra Database**
-
-If you don't have any, please create an Astra instance use the followin button.
-
+1. **Login/Register*
+Click the button to login or register with Datastax.
 <p align="left">
 <a href="https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify">
  <img src="https://dabuttonfactory.com/button.png?t=Create+Astra+Database&f=Calibri-bold&ts=20&tc=fff&hp=40&vp=10&c=8&bgt=unicolored&bgc=6fa8dc" />
@@ -37,8 +35,8 @@ Follow the steps as shown below
 
 |Field| Value|
 |---|---|
-|**database name**| `jamstack` |
-|**keypace**| `todolist` |
+|**database name**| `netlify` |
+|**keypace**| `example` |
 |**Cloud Provider**| *Use the one you like, click a cloud provider logo,  pick an Area in the list and finally pick a region.* |
 
 
@@ -53,8 +51,10 @@ Follow the steps as shown below
 </details>
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
-
-https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true
+    <details>
+    <summary>Show me!</summary>
+    https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true
+    </details>
 
 This will take a few minutes.
 
