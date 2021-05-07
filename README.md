@@ -37,11 +37,10 @@ Click the button to login or register with Datastax.
 
 
 2. **Deploy to Netlify**
-- <details><summary> What does the netlify deploy button do?</summary>
-- The Netlify deploy button will:
-    * Create a new repository for you on Github
-    * Create a site on Netlify
-    * Link the two together.
+- <details><summary> What does the netlify deploy button do?</summary>The Netlify deploy button will:<ul>
+    <li>Create a new repository for you on Github</li>
+    <li>Create a site on Netlify</li>
+    <li>Link the two together.</li></ul>
 </details>
 * Click the button to deploy:
     [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
