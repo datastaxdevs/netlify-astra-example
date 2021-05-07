@@ -34,6 +34,7 @@ Click the button to login or register with Datastax.
     ![image](https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-db.gif?raw=true)
 </details>
 
+**Use the following values when creating the database**
 |Field| Value|
 |---|---|
 |**database name**| `netlify` |
@@ -59,26 +60,26 @@ This will take a few minutes.
   * Click on `Site deploy in progress`, 
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-1.png)
+![image](/images/deploy-1.png)
     </details>
 
   * Click the top deploy link to see the build process.
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-2.png)
+![image](/images/deploy-2.png)
     </details>
 
 
   * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.*
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-3.png)
+![image](/images/deploy-3.png)
     </details>
 
   * Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-4.png)
+![image](/images/deploy-4.png)
     </details>
 
 3. **Clone your GitHub repository**
@@ -86,13 +87,13 @@ This will take a few minutes.
   * Click on the `GitHub` in `Deploys from GitHub` to get back to your new repository.  Scroll to where you were in the README.
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-5.png)
+![image](/images/deploy-5.png)
     </details>
 
   * Clone this repository to your local system by clicking the `Code` button, 
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-6.png)
+![image](/images/deploy-6.png)
     </details>
 
   * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)
@@ -101,7 +102,7 @@ This will take a few minutes.
   ```
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-7.png)
+![image](/images/deploy-7.png)
     </details>
 
   * Change into your repository directory 
