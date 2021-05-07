@@ -59,8 +59,10 @@ https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutoria
 This will take a few minutes.
 
   * Click on `Site deploy in progress`, 
-
-![image](/images/deploy-1.png)
+    <details>
+    <summary>Show screenshot </summary>
+    ![image](/images/deploy-1.png)
+    </details>
 
   * Click the top deploy link to see the build process.
 
