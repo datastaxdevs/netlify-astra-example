@@ -42,11 +42,9 @@ Click the button to login or register with Datastax.
     * Create a site on Netlify
     * Link the two together.
 </details>
-
-Click the button to deploy:
-* [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
-    <details>
-    <summary>Show me!</summary>
+* Click the button to deploy:
+    [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
+ * <details><summary>Show me!</summary>
     https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true
     </details>
 
