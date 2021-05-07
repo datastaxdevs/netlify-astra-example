@@ -22,7 +22,7 @@ Follow the instructions below to get started.
 ## Prerequisites
 * git installed on your local system
 * github account
-* npm 7 or later
+* [node 15 and npm 7 or later](https://www.whitesourcesoftware.com/free-developer-tools/blog/update-node-js/)
 
 ## Getting Started
 Let's do some initial setup by creating a serverless(!) database.
@@ -115,7 +115,7 @@ This will take a few minutes.
 npm install
 ```
 
-8. In the repository directory run the following command  to set up your Astra environment.
+8. In the repository directory run the following command  to set up your Astra environment.  Note that this does require Node 15 and NPM 7 to work.  You can install a node version manager like `nvm` or `n` to use multiple versions on your system.
 ```
 npm exec astra-setup netlify todos
 ```
