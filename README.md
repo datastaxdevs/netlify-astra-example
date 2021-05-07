@@ -92,7 +92,7 @@ This will take a few minutes.
 
   * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)
   ```bash
-  git clone {repo_link}
+  git clone {{repo_link}}
   ```
     <details>
     <summary>Show me! </summary>
