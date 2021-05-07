@@ -22,11 +22,27 @@ Follow the instructions below to get started.
 ## Prerequisites
 Let's do some initial setup by creating a serverless(!) database.
 
-### DataStax Astra
+1. **Create your Astra Database**
 
-1. Create a [DataStax Astra account](https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify) if you don't already have one.  Define a **database name**, **keyspace name** and select a database **region**, then click **create database**.  Use what you like, the setup will create the correct database and keyspace.
+If you don't have any, please create an Astra instance use the followin button.
 
-2. Deploy to Netlify
+<p align="left">
+<a href="https://astra.datastax.com/register?utm_source=github&utm_medium=referral&utm_campaign=todo-astra-jamstack-netlify">
+ <img src="https://dabuttonfactory.com/button.png?t=Create+Astra+Database&f=Calibri-bold&ts=20&tc=fff&hp=40&vp=10&c=8&bgt=unicolored&bgc=6fa8dc" />
+</a>
+</p>
+
+Follow the steps as shown below
+![image](https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-db.gif?raw=true)
+
+|Field| Value|
+|---|---|
+|**database name**| `jamstack` |
+|**keypace**| `todolist` |
+|**Cloud Provider**| *Use the one you like, click a cloud provider logo,  pick an Area in the list and finally pick a region.* |
+
+
+2. **Deploy to Netlify**
 <details>
 <summary> What does the netlify deploy button do?</summary>
 
@@ -38,23 +54,62 @@ Let's do some initial setup by creating a serverless(!) database.
 
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
 
+https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true
 
 This will take a few minutes.
 
-  * Click on "Site deploy in progress", then the top deploy link to see the build process.
+  * Click on `Site deploy in progress`, 
 
-  * When you see "Pushing to repository " you're ready to move on.  Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
+![image](/images/deploy-1.png)
 
-3. Clone your GitHub repository
-  * Click on the 'GitHub' in "Deploys from GitHub' to get back to your new repository.  Scroll to where you were in the README.
+  * Click the top deploy link to see the build process.
 
-  * Clone this repository to your local system by clicking the "Code" button, copying the link, and running `git clone {repo}`
+![image](/images/deploy-2.png)
 
-  * Change into your repository directory `cd {repo}`
+*Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.*
+  
+![image](/images/deploy-3.png)
 
-7. In the repository directory, run `npm install`
+  * Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
 
-8. In the repository directory, run astra-setup to set up your Astra environment
+![image](/images/deploy-4.png)
+
+3. **Clone your GitHub repository**
+
+  * Click on the `GitHub` in `Deploys from GitHub` to get back to your new repository.  Scroll to where you were in the README.
+
+  ![image](/images/deploy-5.png)
+
+  * Clone this repository to your local system by clicking the `Code` button, 
+
+  ![image](/images/deploy-6.png)
+
+  * Copying the link, and running in a terminal *(you should have git installed on your machine as prerequisite)*
+  
+  ```bash
+  git clone {repo_link}
+  ```
+  
+![image](/images/deploy-7.png)
+
+  * Change into your repository directory 
+  
+  ```bash
+  cd netlify-astra-example
+  ```
+
+7. In the repository directory  *(you should have git installed on your machine as prerequisite)*
+
+```bash
+npm install
+```
+
+8. In the repository directory run the following command  to set up your Astra environment.
+
+```
+npm exec astra-setup netlify todos
+```
+
 <details>
   <summary>What does astra-setup do?</summary>
       To setup your ASTRA instance, you want to run `npm exec astra-setup`
@@ -77,7 +132,6 @@ This will take a few minutes.
       `npm exec astra-setup databasename keyspacename`
 </details>
 
-`npm exec astra-setup netlify todos`
 
 9. Next you will run some commands to connect netlify to your site.
       * `netlify login` - this will pop up a browser to authenticate with netlify.  
