@@ -20,6 +20,11 @@ Once the Astra credentials are provided, the necessary tables are created in the
 Follow the instructions below to get started.
 
 ## Prerequisites
+* git installed on your local system
+* github account
+* npm 7 or later
+
+## Getting Started
 Let's do some initial setup by creating a serverless(!) database.
 
 1. **Login/Register**
