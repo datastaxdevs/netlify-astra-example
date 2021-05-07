@@ -60,7 +60,7 @@ This will take a few minutes.
   * Click on `Site deploy in progress`, 
     <details>
     <summary>Show me! </summary>
-![image](/images/deploy-1.png)
+    ![image](/images/deploy-1.png)
     </details>
 
   * Click the top deploy link to see the build process.
