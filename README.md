@@ -119,27 +119,28 @@ npm install
 ```
 npm exec astra-setup netlify todos
 ```
-    <details>
-    <summary>What does astra-setup do?</summary>
-        To setup your ASTRA instance, you want to run `npm exec astra-setup`
 
-        This will do the following:
-        * Have you go to your [Astra Database](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
-            * 30 million reads
-            * 5 million writes
-            * 40 gigabytes of storage
-        * Give steps to grab a Database Administrator Token and paste it into the input field
-        * Ask you what database you want to use (default, existing, create)
-        * Create or access the database
-        * Create/update an .env file in the project root
-        * Create/update an .astrarc file in your home directory
-            * This can be used by httpie-astra `pip3 install httpie-astra`
-            * It can also be used by the @astra/collections and @astra/rest node modules
+<details>
+<summary>What does astra-setup do?</summary>
+    To setup your ASTRA instance, you want to run `npm exec astra-setup`
 
-        ## Specify the database and keyspace
-        You can run the script and tell it which database/keyspace to use by using:
-        `npm exec astra-setup databasename keyspacename`
-    </details>
+    This will do the following:
+    * Have you go to your [Astra Database](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
+        * 30 million reads
+        * 5 million writes
+        * 40 gigabytes of storage
+    * Give steps to grab a Database Administrator Token and paste it into the input field
+    * Ask you what database you want to use (default, existing, create)
+    * Create or access the database
+    * Create/update an .env file in the project root
+    * Create/update an .astrarc file in your home directory
+        * This can be used by httpie-astra `pip3 install httpie-astra`
+        * It can also be used by the @astra/collections and @astra/rest node modules
+
+    ## Specify the database and keyspace
+    You can run the script and tell it which database/keyspace to use by using:
+    `npm exec astra-setup databasename keyspacename`
+</details>
 
 
 9. Next you will run some commands to connect netlify to your site.
