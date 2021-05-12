@@ -38,7 +38,7 @@ Click the button to login or register with Datastax.
 |Field| Value|
 |---|---|
 |**database name**| `netlify` |
-|**keypace**| `example` |
+|**keypace**| `todos` |
 |**Cloud Provider**| *Use the one you like, click a cloud provider logo,  pick an Area in the list and finally pick a region.* |
 
 
@@ -52,7 +52,7 @@ Click the button to login or register with Datastax.
 - Click the button to deploy:
   [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
  * <details><summary>Show me!</summary>
-    https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true
+    <img src="https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true" />
     </details>
 
 This will take a few minutes.
@@ -60,25 +60,25 @@ This will take a few minutes.
   * Click on `Site deploy in progress`, 
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-1.png)
+    <img src="/images/deploy-1.png" />
     </details>
 
   * Click the top deploy link to see the build process.
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-2.png)
+    <img src="/images/deploy-2.png" />
     </details>
 
   * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-3.png)
+    <img src="/images/deploy-3.png" />
     </details>
 
   * Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-4.png)
+    <img src="/images/deploy-4.png" />
     </details>
 
 3. **Clone your GitHub repository**
@@ -86,13 +86,13 @@ This will take a few minutes.
   * Click on the `GitHub` in `Deploys from GitHub` to get back to your new repository.  Scroll to where you were in the README.
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-5.png)
+    <img src="/images/deploy-5.png" />
     </details>
 
   * Clone this repository to your local system by clicking the `Code` button, 
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-6.png)
+    <img src="/images/deploy-6.png" />
     </details>
 
   * Copying the link, and running in a terminal
@@ -101,7 +101,7 @@ This will take a few minutes.
     ```
     <details>
     <summary>Show me! </summary>
-    ![image](/images/deploy-7.png)
+    <img src="/images/deploy-7.png" />
     </details>
 
   * Change into your repository directory 
