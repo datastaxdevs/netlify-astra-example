@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^13.1.8",
-    "astra-setup": "^0.1.10",
+    "astra-setup": "^0.1.11",
     "classnames": "^2.2.6",
     "node-uuid": "^1.4.8",
     "npx": "^10.2.2",
