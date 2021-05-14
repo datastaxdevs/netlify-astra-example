@@ -113,6 +113,7 @@ This will take a few minutes.
 
 ```bash
 npm install
+npm install -g netlify-cli
 ```
 
 8. In the repository directory run the following command  to set up your Astra environment.  Note that this does require Node 15 and NPM 7 to work.  You can install a node version manager like `nvm` or `n` to use multiple versions on your system.
@@ -144,6 +145,7 @@ npm exec astra-setup netlify todos
 
 
 9. Next you will run some commands to connect netlify to your site.
+      * `npm install -g netlify-cli`
       * `netlify login` - this will pop up a browser to authenticate with netlify.  
       * `netlify link` - this will link your workspace to the associated site
       * `netlify env:import .env` - this will take the .env file created by astra-setup and upload it to netlify.
