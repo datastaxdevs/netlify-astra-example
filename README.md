@@ -146,7 +146,7 @@ npm exec astra-setup netlify todos
 9. Next you will run some commands to connect netlify to your site.
       * `netlify login` - this will pop up a browser to authenticate with netlify.  
       * `netlify link` - this will link your workspace to the associated site
-      * `netlify env:import` - this will take the .env file created by astra-setup and upload it to netlify.
+      * `netlify env:import .env` - this will take the .env file created by astra-setup and upload it to netlify.
       * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open
 10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
 
