@@ -1,37 +1,72 @@
-const getTodos = async () => {
-  const response = await fetch(`/.netlify/functions/getTodos`);
-  const todos = await response.json();
+const getDocTodos = async () => {
+  const response = await fetch(`/.netlify/functions/getDocTodos`);
+  let todos = await response.json()
   return todos.length ? todos : [];
 };
 
-const createTodo = async (todo) => {
-  const response = await fetch("/.netlify/functions/createTodo", {
+const createDocTodo = async (todo) => {
+  const response = await fetch("/.netlify/functions/createDocTodo", {
     body: JSON.stringify(todo),
     method: "POST",
   });
   return response.json();
 };
 
-const updateTodo = async (todo) => {
-  const response = await fetch("/.netlify/functions/updateTodo", {
+const updateDocTodo = async (todo) => {
+  const response = await fetch("/.netlify/functions/updateDocTodo", {
     body: JSON.stringify(todo),
     method: "PUT",
   });
   return response.json();
 };
 
-const deleteTodo = async (id) => {
-  const response = await fetch("/.netlify/functions/deleteTodo", {
+const deleteDocTodo = async (id) => {
+  const response = await fetch("/.netlify/functions/deleteDocTodo", {
     body: JSON.stringify({ id }),
     method: "POST",
   });
   return response.json();
 };
 
+const getRestTodos = async () => {
+  const response = await fetch(`/.netlify/functions/getRestTodos`);
+  let todos = await response.json()
+  return todos.length ? todos : [];
+};
+
+const createRestTodo = async (todo) => {
+  const response = await fetch("/.netlify/functions/createRestTodo", {
+    body: JSON.stringify(todo),
+    method: "POST",
+  });
+  return response.json();
+};
+
+const updateRestTodo = async (todo) => {
+  const response = await fetch("/.netlify/functions/updateRestTodo", {
+    body: JSON.stringify(todo),
+    method: "PUT",
+  });
+  return response.json();
+};
+
+const deleteRestTodo = async (id) => {
+  const response = await fetch("/.netlify/functions/deleteRestTodo", {
+    body: JSON.stringify({ id }),
+    method: "POST",
+  });
+  return response.json();
+};
+
+
 const default_export = {
-  getTodos,
-  createTodo,
-  deleteTodo,
-  updateTodo,
+  getDocTodos,
+  createDocTodo,
+  deleteDocTodo,
+  updateDocTodo,
+  getRestTodos,
+  createRestTodo,
+  deleteRestTodo,
+  updateRestTodo
 };
 export default default_export;

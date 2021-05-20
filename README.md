@@ -149,11 +149,10 @@ npm exec astra-setup netlify todos
       * `netlify login` - this will pop up a browser to authenticate with netlify.  
       * `netlify link` - this will link your workspace to the associated site
       * `netlify env:import .env` - this will take the .env file created by astra-setup and upload it to netlify.
-      * `netlify sites:list` - will be used to allow you to execute `npm exec netlify-open
-10. Run the application `netlify dev` and open http://localhost:8080 to view your application:
+      * Run the application `netlify dev` and open http://localhost:8080 to view your application:
+      * `netlify deploy`
+      * `netlify open:site` - will launch a browser with your new site on Netlify
 
-11. Run `npm exec netlify-open`.  You've deployed your app to Netlify!
-![image](https://user-images.githubusercontent.com/3254549/88744842-62233800-d0fd-11ea-8e20-29aa71027885.png)
 
 ### Things to Note:
  - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).

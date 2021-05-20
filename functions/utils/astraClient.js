@@ -2,7 +2,8 @@ const { createClient } = require("@astrajs/collections");
 
 let astraClient = null;
 
-const getAstraClient = async () => {
+const getAstraDocClient = async () => {
+  console.log("Getting Doc client")
   if (astraClient === null) {
     astraClient = await createClient(
       {
@@ -16,11 +17,13 @@ const getAstraClient = async () => {
   return astraClient;
 };
 
-const getCollection = async () => {
-  const documentClient = await getAstraClient();
+
+async function getCollection() {
+  console.log("Getting collection")
+  const documentClient = await getAstraDocClient();
   return documentClient
-    .namespace(process.env.ASTRA_DB_KEYSPACE)
-    .collection("todos");
+    .namespace('todos')
+    .collection("doc");
 };
 
-module.exports = { getAstraClient, getCollection };
+module.exports = { getCollection };

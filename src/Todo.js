@@ -7,21 +7,21 @@ export default class Todo extends Component {
     editing: false,
   };
 
-  handleDoubleClick = () => {
+  handleDocDoubleClick = () => {
     this.setState({ editing: true });
   };
 
-  handleSave = (id, text, completed) => {
+  handleDocSave = (id, text, completed) => {
     if (text.length === 0) {
-      this.props.deleteTodo(id);
+      this.props.deleteDocTodo(id);
     } else {
-      this.props.editTodo(id, text, completed);
+      this.props.editDocTodo(id, text, completed);
     }
-    this.setState({ editing: false });
+    this.setDocState({ editing: false });
   };
 
   render() {
-    const { todo, completeTodo, deleteTodo } = this.props;
+    const { todo, completeDocTodo, deleteDocTodo } = this.props;
 
     let element;
     if (this.state.editing) {
@@ -29,7 +29,7 @@ export default class Todo extends Component {
         <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
-          onSave={(text) => this.handleSave(todo.id, text, todo.completed)}
+          onSave={(text) => this.handleDocSave(todo.id, text, todo.completed)}
         />
       );
     } else {
@@ -39,10 +39,10 @@ export default class Todo extends Component {
             className="toggle"
             type="checkbox"
             checked={todo.completed}
-            onChange={() => completeTodo(todo.id, todo.text, todo.completed)}
+            onChange={() => completeDocTodo(todo.id, todo.text, todo.completed)}
           />
           <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
-          <button className="destroy" onClick={() => deleteTodo(todo.id)} />
+          <button className="destroy" onClick={() => deleteDocTodo(todo.id)} />
         </div>
       );
     }
