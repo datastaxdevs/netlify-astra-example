@@ -34,7 +34,7 @@ const getRestTodos = async () => {
   return todos.length ? todos : [];
 };
 
-const createRestTodo = async (todo) => {
+const addRestTodo = async (todo) => {
   const response = await fetch("/.netlify/functions/createRestTodo", {
     body: JSON.stringify(todo),
     method: "POST",
@@ -65,7 +65,7 @@ const default_export = {
   deleteDocTodo,
   updateDocTodo,
   getRestTodos,
-  createRestTodo,
+  addRestTodo,
   deleteRestTodo,
   updateRestTodo
 };

@@ -21,30 +21,57 @@ export default class Todo extends Component {
   };
 
   render() {
-    const { todo, completeDocTodo, deleteDocTodo } = this.props;
+    const { todo, completeDocTodo, deleteDocTodo, completeRestTodo, deleteRestTodo, type } = this.props;
 
     let element;
-    if (this.state.editing) {
-      element = (
-        <TodoTextInput
-          text={todo.text}
-          editing={this.state.editing}
-          onSave={(text) => this.handleDocSave(todo.id, text, todo.completed)}
-        />
-      );
-    } else {
-      element = (
-        <div className="view">
-          <input
-            className="toggle"
-            type="checkbox"
-            checked={todo.completed}
-            onChange={() => completeDocTodo(todo.id, todo.text, todo.completed)}
+    if (type === "rest") {
+      if (this.state.editing) {
+        element = (
+          <TodoTextInput
+            text={todo.text}
+            editing={this.state.editing}
+            onSave={(text) => this.handleRestSave(todo.id, text, todo.completed)}
           />
-          <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
-          <button className="destroy" onClick={() => deleteDocTodo(todo.id)} />
-        </div>
-      );
+        );
+      } else {
+        element = (
+          <div className="view">
+            <input
+              className="toggle"
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => completeRestTodo(todo.id, todo.text, todo.completed)}
+            />
+            <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
+            <button className="destroy" onClick={() => deleteRestTodo(todo.id)} />
+          </div>
+        );
+      }
+    }
+
+    if (type === "doc"){
+      if (this.state.editing) {
+        element = (
+          <TodoTextInput
+            text={todo.text}
+            editing={this.state.editing}
+            onSave={(text) => this.handleDocSave(todo.id, text, todo.completed)}
+          />
+        );
+      } else {
+        element = (
+          <div className="view">
+            <input
+              className="toggle"
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => completeDocTodo(todo.id, todo.text, todo.completed)}
+            />
+            <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
+            <button className="destroy" onClick={() => deleteDocTodo(todo.id)} />
+          </div>
+        );
+      }
     }
 
     return (

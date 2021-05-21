@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header";
-import TodoList from "./TodoListDoc";
+import TodoList from "./TodoList";
 import api from "./utils/api";
 import uuid from "node-uuid";
 import { Hook, Console, Decode } from 'console-feed';
@@ -27,23 +27,28 @@ class App extends Component {
       this.setState({ docTodos });
   };
 
-  addRestTodo = (text) => {
-    api
-      .createRestTodo({
+  addRestTodo = async (text) => {
+    await api
+      .addRestTodo({
         id: uuid.v1(),
         completed: false,
         text: text,
+        key: "todo"
       })
-      let restTodos = api.getRestTodos();
+      let restTodos = await api.getRestTodos();
       this.setState({ restTodos });
   };
-
 
   deleteDocTodo = async (id) => {
     await api.deleteDocTodo(id);
     let docTodos = await api.getDocTodos();
-    console.log(docTodos)
     this.setState({ docTodos });
+  };
+
+  deleteRestTodo = async (id) => {
+    await api.deleteRestTodo(id);
+    let restTodos = await api.getRestTodos();
+    this.setState({ restTodos });
   };
 
   async editDocTodo (id, text, completed) {
@@ -62,7 +67,16 @@ class App extends Component {
         text,
         completed: !completed,
       })
-      this.getDocTodos();
+      api.getDocTodos().then((docTodos) => this.setState({ docTodos }));
+  };
+
+  completeRestTodo = async (id, text, completed) => {
+    await api.updateRestTodo({
+        id,
+        text,
+        completed: !completed
+      })
+      await this.getRestTodos();
   };
 
   componentDidMount = async () =>{
@@ -72,17 +86,16 @@ class App extends Component {
     Hook(window.console, log => {
       this.setState(({ logs }) => ({ logs: [...logs, Decode(log)] }))
     })
-
-    console.log(`Hello world!`)
+    console.log("Welcome to the todo app!")
   }
 
   getDocTodos = async() => {
+    console.log("Getting Doc Todos")
     api.getDocTodos().then((docTodos) => this.setState({ docTodos }));
   }
 
   getRestTodos = async() => {
     api.getRestTodos().then((restTodos) => this.setState({ restTodos }));
-    console.log("Got rest todos")
   }
 
   async completeDocAll() { 
@@ -109,10 +122,12 @@ class App extends Component {
     deleteDocTodo: this.deleteDocTodo,
     editDocTodo: this.editDocTodo,
     completeDocTodo: this.completeDocTodo,
+    completeRestTodo: this.completeRestTodo,
     completeDocAll: this.completeDocAll,
     clearDocCompleted: this.clearDocCompleted,
     getDocTodos: this.getDocTodos,
-    getRestTodos: this.getRestTodos
+    getRestTodos: this.getRestTodos,
+    deleteRestTodo: this.deleteRestTodo
   };
 
   render() {
@@ -122,11 +137,11 @@ class App extends Component {
         <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: 50 }}>
           <div className = "todos">
             <Header title="Doc todos" addTodo={this.actions.addDocTodo} />
-            <TodoList todos={this.state.docTodos} actions={this.actions} />
+            <TodoList type="doc" todos={this.state.docTodos} actions={this.actions} />
           </div>
           <div className="todos">
             <Header title="REST todos" addTodo={this.actions.addRestTodo} />
-            <TodoList todos={this.state.restTodos} actions={this.actions} />
+            <TodoList type="rest" todos={this.state.restTodos} actions={this.actions} />
           </div>
           <div className="todos">
             <Header title="GQ Todos" addTodo={this.actions.addGQTodo} />
@@ -135,7 +150,7 @@ class App extends Component {
         </div>
       </div>
       <div>
-      <div style={{ backgroundColor: '#000000' }}>
+      <div style={{ backgroundColor: '#000000', marginTop: 40 }}>
         <Console logs={this.state.logs} variant="dark" />
         </div>
       </div>

@@ -2,7 +2,6 @@ const { getCollection } = require("./utils/astraClient");
 
 exports.handler = async (event, context) => {
   const body = JSON.parse(event.body);
-  console.log(context)
   const todos = await getCollection();
   try {
     const res = await todos.delete(body.id);

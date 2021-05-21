@@ -1,24 +1,19 @@
 const { getRestClient } = require("./utils/astraRestClient");
 exports.handler = async (event, context) => {
   const todos = await getRestClient();
-  const keyspace = 'rest';
   const body = JSON.parse(event.body);
-  console.log(event.body)
-  console.log(event)
-
-  try {
-    const { data, status} = await todos.post('/api/rest/v2/schemas/keyspaces/todos/tables/rest', event.body);
-    console.log(JSON.stringify(data))
-    console.log("STATUS" + JSON.stringify(status))
+  event.body.key = "todo"
+  
+  const res = await todos.post('/api/rest/v2/keyspaces/todos/rest', event.body);
+  if (res.status == 201) {
     return {
-      statusCode: 200,
-      body: JSON.stringify(res),
-    };
-  } catch (e) {
-    console.log("ERRPR: " + JSON.stringify(e))
+        statusCode: res.status,
+        body: JSON.stringify(res.data),
+    }
+  } else {
     return {
-      statusCode: 400,
-      body: JSON.stringify(e),
-    };
+      statusCode: res.status,
+      body: JSON.stringify(res.data)
+    }
   }
 };

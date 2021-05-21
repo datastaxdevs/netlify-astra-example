@@ -3,7 +3,6 @@ const { createClient } = require("@astrajs/collections");
 let astraClient = null;
 
 const getAstraDocClient = async () => {
-  console.log("Getting Doc client")
   if (astraClient === null) {
     astraClient = await createClient(
       {
@@ -19,7 +18,6 @@ const getAstraDocClient = async () => {
 
 
 async function getCollection() {
-  console.log("Getting collection")
   const documentClient = await getAstraDocClient();
   return documentClient
     .namespace('todos')
