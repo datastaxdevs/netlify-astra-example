@@ -10,31 +10,41 @@ const TODO_FILTERS = {
 
 export default class TodoList extends Component {
   state = { filter: "SHOW_ALL" };
-  
-
-  handleClearCompletedDoc = () => {
-    this.props.actions.clearCompletedDoc();
-  };
 
   handleShow = (filter) => {
     this.setState({ filter });
   };
 
-  renderToggleDocAll(completedCount) {
+  handleClearCompletedDoc = () => {
+    this.props.actions.clearCompletedDoc();
+  };
+
+  renderToggleAll(type, completedCount) {
     const { todos, actions } = this.props;
     if (todos.length > 0) {
+      if (completedCount === todos.length) {
+        return (
+          <input
+            className="toggle-all"
+            type="checkbox"
+            checked={completedCount === todos.length}
+            onChange={()=>actions.clearCompleted(type)}
+          />
+        );
+      }
       return (
         <input
           className="toggle-all"
           type="checkbox"
           checked={completedCount === todos.length}
-          onChange={actions.completeDocAll}
+          onChange={()=>actions.completeAll(type)}
+          
         />
       );
-    }
   }
+}
 
-  renderDocFooter(completedCount) {
+  renderFooter(type, completedCount) {
     const { todos } = this.props;
     const { filter } = this.state;
     const activeCount = todos.length - completedCount;
@@ -45,8 +55,8 @@ export default class TodoList extends Component {
           completedCount={completedCount}
           activeCount={activeCount}
           filter={filter}
-          onClearCompleted={this.handleClearCompletedDoc.bind(this)}
           onShow={this.handleShow.bind(this)}
+          onClearCompleted={this.handleClearCompletedDoc.bind(this)}
         />
       );
     }
@@ -55,6 +65,7 @@ export default class TodoList extends Component {
   componentDidMount() {
     this.props.actions.getDocTodos().then(docTodos => {this.setState({ docTodos })});
     this.props.actions.getRestTodos().then(restTodos => {this.setState({ restTodos })});
+    this.props.actions.getGQTodos().then(GQTodos => {this.setState({ GQTodos })});
     
   }
 
@@ -62,6 +73,7 @@ export default class TodoList extends Component {
     const { todos, actions, type } = this.props;
     const { filter } = this.state;
     const filteredTodos = todos.filter(TODO_FILTERS[filter]);
+
     const completedCount = todos.reduce((count, todo) => {
       return todo.completed ? count + 1 : count;
     }, 0);
@@ -74,16 +86,16 @@ export default class TodoList extends Component {
       )
     }
 
+
     return (
       <section className="main">
-        {this.renderToggleDocAll(completedCount)}
           <ul className="todo-list">
             {filteredTodos.map((todo) => (
               <Todo type={type} key={todo.id} todo={todo} {...actions} />
             ))}
           </ul>
 
-        {this.renderDocFooter(completedCount)}
+        {this.renderFooter(type, completedCount)}
       </section>
     );
   }

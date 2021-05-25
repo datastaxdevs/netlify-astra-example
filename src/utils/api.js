@@ -28,10 +28,24 @@ const deleteDocTodo = async (id) => {
   return response.json();
 };
 
+const getGQTodos = async () => {
+  const response = await fetch(`/.netlify/functions/getGQTodos`);
+  let todos = await response.json()
+  return todos.length ? todos : [];
+};
+
 const getRestTodos = async () => {
   const response = await fetch(`/.netlify/functions/getRestTodos`);
   let todos = await response.json()
   return todos.length ? todos : [];
+};
+
+const addGQTodo = async (todo) => {
+  const response = await fetch("/.netlify/functions/createGQTodo", {
+    body: JSON.stringify(todo),
+    method: "POST",
+  });
+  return response.json();
 };
 
 const addRestTodo = async (todo) => {
@@ -61,6 +75,8 @@ const deleteRestTodo = async (id) => {
 
 const default_export = {
   getDocTodos,
+  getGQTodos,
+  addGQTodo,
   createDocTodo,
   deleteDocTodo,
   updateDocTodo,

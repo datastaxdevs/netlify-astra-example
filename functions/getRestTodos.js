@@ -4,7 +4,7 @@ exports.handler = async (event, context) => {
   const client = await getClient();
   let res;
   try {
-    res = await client.get('/api/rest/v2/keyspaces/todos/rest?where=\{"key":\{"$eq":\"todo"\}\}')
+    res = await client.get('/api/rest/v2/keyspaces/todos/rest?where=\{"key":\{"$eq":\"rest"\}\}')
     const formattedTodos = Object.keys(res.data).map((item) => res.data[item]);
     return {
       headers: '{Content-Type: application/json}',
@@ -22,7 +22,6 @@ exports.handler = async (event, context) => {
 async function getClient() {
   let client = await getRestClient();
   if (client === null) {
-    console.log("Waiting a bit")
     wait(1000)
     return getClient()
   }

@@ -21,7 +21,7 @@ export default class Todo extends Component {
   };
 
   render() {
-    const { todo, completeDocTodo, deleteDocTodo, completeRestTodo, deleteRestTodo, type } = this.props;
+    const { todo, completeDocTodo, deleteDocTodo, completeRestTodo, deleteRestTodo, completeGQTodo, deleteGQTodo, type } = this.props;
 
     let element;
     if (type === "rest") {
@@ -46,10 +46,32 @@ export default class Todo extends Component {
             <button className="destroy" onClick={() => deleteRestTodo(todo.id)} />
           </div>
         );
-      }
-    }
-
-    if (type === "doc"){
+        }
+       } else if (type === "graphql") {
+        if (this.state.editing) {
+          element = (
+            <TodoTextInput
+              text={todo.text}
+              editing={this.state.editing}
+              onSave={(text) => this.handleGQSave(todo.id, text, todo.completed)}
+            />
+          );
+        } else if (type === "graphql") {
+          element = (
+            <div className="view">
+              <input
+                className="toggle"
+                type="checkbox"
+                checked={todo.completed}
+                onChange={() => completeGQTodo(todo.id, todo.text, todo.completed)}
+              />
+              <label onDoubleClick={this.handleDoubleClick}>{todo.text}</label>
+              <button className="destroy" onClick={() => deleteGQTodo(todo.id)} />
+            </div>
+          );
+        
+        }
+      } else if (type === "doc"){
       if (this.state.editing) {
         element = (
           <TodoTextInput

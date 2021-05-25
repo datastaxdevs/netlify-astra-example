@@ -1,7 +1,0 @@
-name: 'netlify-plugin-astra'
-inputs: []
-# Example inputs:
-#  - name: example
-#    description: Example description
-#    default: 5
-#    required: false

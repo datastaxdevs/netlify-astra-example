@@ -141,6 +141,12 @@ body {
 
 .css-3tmnuj {
 	min-height: 50px !important;
+	font-size: 18px !important;
+
+}
+
+.css-y965hj {
+	font-size: 18px !important;
 }
 
 .toggle-all:checked + label:before {
