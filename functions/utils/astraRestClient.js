@@ -31,6 +31,7 @@ const getAstraRestClient = async () => {
         astraDatabaseId: process.env.ASTRA_DB_ID,
         astraDatabaseRegion: process.env.ASTRA_DB_REGION,
         applicationToken: process.env.ASTRA_DB_APPLICATION_TOKEN,
+        debug: true
       },
       30000
     );

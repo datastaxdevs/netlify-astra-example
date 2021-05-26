@@ -4,5 +4,6 @@ functions = "functions"
 publish = "build"
 
 [[headers]]
+for = "/*"
   [headers.values]
     Content-Type = "application/json"

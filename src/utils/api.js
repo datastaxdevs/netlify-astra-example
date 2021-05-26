@@ -1,14 +1,20 @@
 const getDocTodos = async () => {
+  console.log('%cGetting Doc Todos', 'color: cyan; font-size: x-large');
+  
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
+  console.table(todos, 'color: cyan; font-size: x-large')
   return todos.length ? todos : [];
 };
 
 const createDocTodo = async (todo) => {
+  console.log('%cCreating a new Doc Todo', 'color: cyan; font-size: x-large');
+  console.log(todo)
   const response = await fetch("/.netlify/functions/createDocTodo", {
     body: JSON.stringify(todo),
     method: "POST",
   });
+  console.log(response.json())
   return response.json();
 };
 
@@ -30,6 +36,7 @@ const deleteDocTodo = async (id) => {
 
 const getGQTodos = async () => {
   const response = await fetch(`/.netlify/functions/getGQTodos`);
+  console.log("GRAPHQL: /api/graphql/todos")
   let todos = await response.json()
   return todos.length ? todos : [];
 };

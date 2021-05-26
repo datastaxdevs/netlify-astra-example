@@ -17,8 +17,6 @@ class App extends Component {
 	}
 
 	addDocTodo = async (text) => {
-		console.log('%cCreating a new Doc Todo', 'color: yellow; font-size: x-large');
-    
 		await api.createDocTodo({
 			id: uuid.v1(),
 			completed: false,
@@ -217,8 +215,8 @@ class App extends Component {
 					</div>
 				</div>
 				<div>
-					<div style={{ backgroundColor: '#CCCCCC', marginTop: 40 }}>
-						<Console logs={this.state.logs} variant="dark" />
+					<div style={{ backgroundColor: '#CCCCCC', fontSize: 20, marginTop: 40 }}>
+						<Console logs={this.state.logs} variant="light" />
 					</div>
 				</div>
 			</div>
