@@ -4,6 +4,6 @@ functions = "functions"
 publish = "build"
 
 [[headers]]
-for = "/*"
+for = "/.netlify/functions"
   [headers.values]
     Content-Type = "application/json"
