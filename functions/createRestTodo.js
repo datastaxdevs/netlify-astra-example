@@ -9,6 +9,9 @@ exports.handler = async (event, context) => {
     return {
         statusCode: res.status,
         body: JSON.stringify(res.data),
+        headers: {
+          'Content-Type': 'application/json'
+        },
     }
   } else {
     return {

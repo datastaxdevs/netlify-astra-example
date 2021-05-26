@@ -1,5 +1,6 @@
 const getDocTodos = async () => {
   console.log('%cGetting Doc Todos', 'color: cyan; font-size: x-large');
+  console.log('%cDOC: GET ', 'color: cyan; font-size: x-large');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
