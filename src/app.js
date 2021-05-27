@@ -94,14 +94,15 @@ class App extends Component {
 	};
 
 	componentDidMount = async () => {
+		Hook(window.console, (log) => {
+			this.setState(({ logs }) => ({ logs: [...logs, Decode(log)] }));
+		});
 		api.getDocTodos().then((docTodos) => this.setState({ docTodos }));
 		api.getRestTodos().then((restTodos) => this.setState({ restTodos }));
 		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
 
-		Hook(window.console, (log) => {
-			this.setState(({ logs }) => ({ logs: [...logs, Decode(log)] }));
-		});
-		console.log('%cWelcome to the todo app!', 'color: blue; font-size: x-large');
+		
+		console.log('%cWelcome to the todo app!', 'color: blue; font-size: large; font-family: arial');
 	};
 
 	getDocTodos = async () => {
@@ -113,9 +114,7 @@ class App extends Component {
 	};
 
 	getGQTodos = async () => {
-		console.log("Getting GQ todos")
 		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
-		console.log("GQ todos: " + this.state.GQTodos)
 	};
 
 	async completeAll(type) {
