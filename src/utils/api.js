@@ -1,5 +1,5 @@
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: arial');
+  console.log('%cGetting Doc Todos', 'color: blue; font-family: arial');
   console.log('%c    DOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-family: arial');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
@@ -49,7 +49,7 @@ const getGQTodos = async () => {
     }
   }
 }`
-  console.log('%cGetting GQ Todos', 'color: red; font-size: x-large font-family: arial');
+  console.log('%cGetting GQ Todos', 'color: red; font-family: arial');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
   console.dir(body)
   const response = await fetch(`/.netlify/functions/getGQTodos`);
@@ -60,7 +60,7 @@ const getGQTodos = async () => {
 };
 
 const getRestTodos = async () => {
-  console.log('%cGetting Rest Todos', 'color: green; font-size: x-large font-family: arial');
+  console.log('%cGetting Rest Todos', 'color: green; font-family: arial');
   console.log('%c    GQ: GET /api/graphql/todos?where={"key":{"$eq":"rest"}}', 'color: green; font-family: arial');
   const response = await fetch(`/.netlify/functions/getRestTodos`);
   let todos = await response.json();
