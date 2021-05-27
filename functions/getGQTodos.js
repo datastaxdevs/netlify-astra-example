@@ -4,9 +4,7 @@ exports.handler = async (event, context) => {
   if (!client) {
     client = await getClient();
   }
-  console.log("Waiting for Graph QL")
   await waitForGraphQL();
-  console.log("Done")
   let query = `query GQTodos {
     graphql (value: {key:"graphql"}) {
       values {
@@ -16,12 +14,11 @@ exports.handler = async (event, context) => {
         key
       }
     }}`
-    console.log(query)
     
 
   try {
     res = await client.post('/api/graphql/todos', query={query})
-    console.log(res)
+    console.log("RESPONSE: " + res)
     const formattedTodos = Object.keys(res.data.graphql.values).map((item) => res.data.graphql.values[item]);
     return {
       headers: '{Content-Type: application/json}',
