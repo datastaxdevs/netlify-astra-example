@@ -51,7 +51,7 @@ const getGQTodos = async () => {
 }`
   console.log('%cGetting GQ Todos', 'color: red; font-family: arial');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
-  console.log(JSON.stringify(body))
+  console.log('%c    ' + body, 'color: red; font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
   console.log('%cResponse from GQ: POST /api/graphql/todo', 'color: red; font-family: arial')
