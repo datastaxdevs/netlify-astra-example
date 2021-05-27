@@ -62,11 +62,6 @@ export default class TodoList extends Component {
     }
   }
 
-  componentDidMount() {
-    this.props.actions.getRestTodos().then(restTodos => {this.setState({ restTodos })});
-    this.props.actions.getGQTodos().then(GQTodos => {this.setState({ GQTodos })});
-  }
-
   render() {
     const { todos, actions, type } = this.props;
     const { filter } = this.state;
