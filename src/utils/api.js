@@ -53,6 +53,7 @@ const getGQTodos = async () => {
   console.log('%c    GQ: POST /api/graphql/todos'+ '\n' + body, 'color: red; font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
+  console.log('%cResponse from JQ: POST /api/graphql/todo', 'color: red; font-family: arial')
   console.table(todos)
   return todos.length ? todos : [];
 };
