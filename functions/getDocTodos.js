@@ -16,7 +16,6 @@ exports.handler = async (event, context) => {
     };
   } catch (e) {
 
-    console.log("getDocTodos ERROR: " + e)
     return {
       statusCode: 400,
       body: JSON.stringify(e),

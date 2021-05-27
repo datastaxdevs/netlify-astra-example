@@ -1,10 +1,10 @@
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: cyan; font-size: x-large');
-  console.log('%cDOC: GET ', 'color: cyan; font-size: x-large');
+  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: ariel');
+  console.log('%cDOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-size: x-large');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
-  console.table(todos, 'color: cyan; font-size: x-large')
+  console.table(todos)
   return todos.length ? todos : [];
 };
 
@@ -15,7 +15,7 @@ const createDocTodo = async (todo) => {
     body: JSON.stringify(todo),
     method: "POST",
   });
-  console.log(response.json())
+  console.table(response)
   return response.json();
 };
 
@@ -36,8 +36,22 @@ const deleteDocTodo = async (id) => {
 };
 
 const getGQTodos = async () => {
+  let body = `
+  BODY: data: {
+    query: 'query GQTodos {
+         graphql (value: {key:"graphql"}) {
+         values {
+         id
+         text
+         completed
+         key
+    }
+  }
+}`
+  console.log('%cGetting GQ Todos', 'color: cyan; font-size: x-large font-family: ariel');
+  console.log('%GQ: POST /api/graphql/todos', 'color: cyan; font-size: x-large');
+  console.log(body, 'color: cyan; font-size: x-large font-family: ariel')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
-  console.log("GRAPHQL: /api/graphql/todos")
   let todos = await response.json()
   return todos.length ? todos : [];
 };

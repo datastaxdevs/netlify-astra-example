@@ -81,7 +81,7 @@ class App extends Component {
 			text,
 			completed: completed,
 		});
-		api.getDocTodos().then((GQTodos) => this.setState({ GQTodos }));
+		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
 	};
 
 	completeRestTodo = async (id, text, completed) => {
