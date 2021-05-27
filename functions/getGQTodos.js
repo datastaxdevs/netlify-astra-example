@@ -17,9 +17,7 @@ exports.handler = async (event, context) => {
 
   try {
     res = await client.post('/api/graphql/todos', query={query})
-    console.log("RESPONSE: " + JSON.stringify(res))
     const formattedTodos = Object.keys(res.data.graphql.values).map((item) => res.data.graphql.values[item]);
-    console.log("GQ Formatted: " + JSON.stringify(formattedTodos))
     return {
       statusCode: 200,
       body: JSON.stringify(formattedTodos),

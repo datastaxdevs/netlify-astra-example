@@ -1,6 +1,6 @@
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: ariel');
-  console.log('%cDOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-size: x-large');
+  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: arial');
+  console.log('%cDOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-size: large; font-face: arial');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
@@ -48,11 +48,12 @@ const getGQTodos = async () => {
     }
   }
 }`
-  console.log('%cGetting GQ Todos', 'color: cyan; font-size: x-large font-family: ariel');
-  console.log('%GQ: POST /api/graphql/todos', 'color: cyan; font-size: x-large');
-  console.log(body, 'color: cyan; font-size: x-large font-family: ariel')
+  console.log('%cGetting GQ Todos', 'color: blue; font-size: x-large font-family: arial');
+  console.log('%GQ: POST /api/graphql/todos', 'color: blue; font-size: x-large; font-family: arial');
+  console.log(body, 'color: cyan; font-size: x-large font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
+  console.table(todos)
   return todos.length ? todos : [];
 };
 
