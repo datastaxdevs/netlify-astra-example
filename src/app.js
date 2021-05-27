@@ -113,7 +113,9 @@ class App extends Component {
 	};
 
 	getGQTodos = async () => {
+		console.log("Getting GQ todos")
 		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
+		console.log("GQ todos: " + this.state.GQTodos)
 	};
 
 	async completeAll(type) {
