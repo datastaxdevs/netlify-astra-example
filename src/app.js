@@ -214,7 +214,7 @@ class App extends Component {
 					</div>
 				</div>
 				<div>
-					<div style={{ backgroundColor: '#CCCCCC', fontSize: 20, marginTop: 40 }}>
+					<div style={{ backgroundColor: '#EEEEEE', fontSize: 20, marginTop: 40, borderStyle: solid }}>
 						<Console logs={this.state.logs} variant="light" />
 					</div>
 				</div>
