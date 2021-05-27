@@ -1,6 +1,6 @@
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: arial');
-  console.log('%cDOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-size: large; font-face: arial');
+  console.log('%cGetting Doc Todos', 'color: blue; font-size: large font-family: arial');
+  console.log('%c    DOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-family: arial');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
@@ -49,8 +49,8 @@ const getGQTodos = async () => {
   }
 }`
   console.info('%cGetting GQ Todos', 'color: blue; font-size: x-large font-family: arial');
-  console.info('%GQ: POST /api/graphql/todos', 'color: blue; font-size: x-large; font-family: arial');
-  console.info(body, 'color: cyan; font-size: large font-family: arial')
+  console.info('%cGQ: POST /api/graphql/todos', 'color: blue; font-size: large; font-family: arial');
+  console.info('%cBODY: ' + body, 'color: cyan; font-size: large font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
   console.table(todos)
