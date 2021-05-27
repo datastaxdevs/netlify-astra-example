@@ -22,9 +22,11 @@ exports.handler = async (event, context) => {
     const formattedTodos = Object.keys(res.data.graphql.values).map((item) => res.data.graphql.values[item]);
     console.log("GQ Formatted: " + JSON.stringify(formattedTodos))
     return {
-      headers: '{Content-Type: application/json}',
       statusCode: 200,
       body: JSON.stringify(formattedTodos),
+      headers: {
+        'Content-Type': 'application/json'
+      },
     };
   } catch (e) {
     return {
