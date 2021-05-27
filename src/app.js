@@ -101,8 +101,6 @@ class App extends Component {
 		api.getRestTodos().then((restTodos) => this.setState({ restTodos }));
 		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
 
-		
-		console.log('%cWelcome to the todo app!', 'color: blue; font-size: large; font-family: arial');
 	};
 
 	getDocTodos = async () => {
