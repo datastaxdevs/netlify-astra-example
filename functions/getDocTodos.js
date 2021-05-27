@@ -5,7 +5,6 @@ exports.handler = async (event, context) => {
   try {
     const res = await todos.find({});
     const formattedTodos = Object.keys(res).map((item) => res[item]);
-    console.log("FormattedTodos: " + JSON.stringify(formattedTodos))
     return {
       headers: '{Content-Type: application/json}',
       statusCode: 200,
