@@ -71,6 +71,17 @@ const getRestTodos = async () => {
 };
 
 const addGQTodo = async (todo) => {
+  console.log('%cGetting GQ Todos', 'color: red; font-family: arial');
+  console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
+  let body = `mutation insertgraphql {
+    graphql: insertgraphql(value: {
+      id: "${todo.id}",
+        completed: false,
+        text: "${todo.text}",
+        key: "graphql"
+  }) {value { text } }}`;
+  console.log(body)
+
   const response = await fetch("/.netlify/functions/createGQTodo", {
     body: JSON.stringify(todo),
     method: "POST",
