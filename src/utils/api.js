@@ -4,6 +4,7 @@ const getDocTodos = async () => {
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
+  console.log("Response from DOC: GET /api/rest/v2/namespaces/todos/collections/doc", 'color: blue; font-family: arial')
   console.table(todos)
   return todos.length ? todos : [];
 };
