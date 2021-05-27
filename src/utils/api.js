@@ -48,9 +48,9 @@ const getGQTodos = async () => {
     }
   }
 }`
-  console.log('%cGetting GQ Todos', 'color: blue; font-size: x-large font-family: arial');
-  console.log('%GQ: POST /api/graphql/todos', 'color: blue; font-size: x-large; font-family: arial');
-  console.log(body, 'color: cyan; font-size: x-large font-family: arial')
+  console.info('%cGetting GQ Todos', 'color: blue; font-size: x-large font-family: arial');
+  console.info('%GQ: POST /api/graphql/todos', 'color: blue; font-size: x-large; font-family: arial');
+  console.info(body, 'color: cyan; font-size: large font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
   console.table(todos)
