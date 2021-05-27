@@ -1,5 +1,5 @@
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: blue; font-size: large font-family: arial');
+  console.log('%cGetting Doc Todos', 'color: blue; font-size: x-large font-family: arial');
   console.log('%c    DOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-family: arial');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
