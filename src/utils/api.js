@@ -38,7 +38,7 @@ const deleteDocTodo = async (id) => {
 
 const getGQTodos = async () => {
   let body = `
-  BODY: data: {
+  GQ BODY: data: {
     query: 'query GQTodos {
          graphql (value: {key:"graphql"}) {
          values {
@@ -51,7 +51,7 @@ const getGQTodos = async () => {
 }`
   console.log('%cGetting GQ Todos', 'color: red; font-family: arial');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
-  console.log(body)
+  console.log(JSON.stringify(body))
   const response = await fetch(`/.netlify/functions/getGQTodos`);
   let todos = await response.json()
   console.log('%cResponse from GQ: POST /api/graphql/todo', 'color: red; font-family: arial')
