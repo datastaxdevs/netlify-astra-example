@@ -4,7 +4,6 @@ exports.handler = async (event, context) => {
   if (!client) {
     client = await getClient();
   }
-  await waitForGraphQL();
   let query = `query GQTodos {
     graphql (value: {key:"graphql"}) {
       values {
@@ -43,15 +42,4 @@ async function getClient() {
     return getClient()
   }
   return client
-}
-
-async function waitForGraphQL() {
-  let tables = await client.get('/api/rest/v2/schemas/keyspaces/todos/tables')
-  let indices = await client.get('/api/rest/v2/schemas/keyspaces/todos/tables/graphql/indexes')
-  let results = tables.data.filter(entry => entry.name === "graphql");
-    if (!indices.data.length) {
-      wait(1000)
-      return waitForGraphQL();
-    }
-  return results;
 }
