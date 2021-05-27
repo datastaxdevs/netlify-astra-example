@@ -66,7 +66,7 @@ const getRestTodos = async () => {
   let todos = await response.json()
   console.log("where: " + 'where={"key":{"$eq":"rest"}}', 'color: green; font-family: arial')
 
-  console.log('%c        ' + todos, 'color: green; font-size: large font-family: arial')
+  console.table(todos)
   return todos.length ? todos : [];
 };
 
