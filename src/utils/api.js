@@ -59,13 +59,13 @@ const getGQTodos = async () => {
 };
 
 const getRestTodos = async () => {
-  console.log('%cGetting Rest Todos', 'color: blue; font-size: x-large font-family: arial');
-  console.log('%c    GQ: GET /api/graphql/todos', 'color: blue; font-family: arial');
+  console.log('%cGetting Rest Todos', 'color: green; font-size: x-large font-family: arial');
+  console.log('%c    GQ: GET /api/graphql/todos', 'color: green; font-family: arial');
   const response = await fetch(`/.netlify/functions/getRestTodos`);
   let todos = await response.json()
-  console.log("where: " + 'where={"key":{"$eq":"rest"}}')
+  console.log("where: " + 'where={"key":{"$eq":"rest"}}', 'color: green; font-family: arial')
 
-  console.log('%c        ' + todos, 'color: blue; font-size: large font-family: arial')
+  console.log('%c        ' + todos, 'color: green; font-size: large font-family: arial')
   return todos.length ? todos : [];
 };
 
