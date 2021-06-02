@@ -82,7 +82,7 @@ export default class TodoList extends Component {
 
     return (
       <section className="main">
-          <ul className="todo-list">
+          <ul className={`todo-list ${type}`}>
             {filteredTodos.map((todo) => (
               <Todo type={type} key={todo.id} todo={todo} {...actions} />
             ))}

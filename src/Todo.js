@@ -56,7 +56,7 @@ export default class Todo extends Component {
               onSave={(text) => this.handleGQSave(todo.id, text, todo.completed)}
             />
           );
-        } else if (type === "graphql") {
+        } else {
           element = (
             <div className="view">
               <input

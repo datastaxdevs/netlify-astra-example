@@ -142,7 +142,12 @@ body {
 .css-3tmnuj {
 	min-height: 50px !important;
 	font-size: 18px !important;
+	line-height: 1em
 
+}
+
+.css-e393sm span {
+	line-height: 12px;
 }
 
 .css-y965hj {
@@ -203,6 +208,33 @@ body {
 	opacity: 0;
 }
 
+.doc li.completed label {
+	color: lightblue;
+	text-decoration: line-through;
+}
+
+.doc li label {
+	color: blue
+}
+
+.rest li.completed label {
+	color: lightgreen;
+	text-decoration: line-through;
+}
+
+.rest li label{
+	color: green
+}
+
+.rest li.completed label {
+	color: pink;
+	text-decoration: line-through;
+}
+
+.graphql li label {
+	color: red
+}
+
 .todo-list li .toggle + label {
 	/*
 		Firefox requires `#` to be escaped - https://bugzilla.mozilla.org/show_bug.cgi?id=922433
@@ -224,13 +256,8 @@ body {
 	line-height: 1.2;
 	transition: color 0.4s;
 	font-weight: 400;
-	color: #4d4d4d;
 }
 
-.todo-list li.completed label {
-	color: #cdcdcd;
-	text-decoration: line-through;
-}
 
 .todo-list li .destroy {
 	display: none;
