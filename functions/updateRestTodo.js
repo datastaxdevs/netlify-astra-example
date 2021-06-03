@@ -9,7 +9,7 @@ exports.handler = async (event, context) => {
     body = {"text":body.text, "completed":body.completed}
     const res = await todos.put(path, body);
     return {
-      statusCode: 200,
+      statusCode: res.status,
       body: JSON.stringify(res),
       headers: {
         'Content-Type': 'application/json'

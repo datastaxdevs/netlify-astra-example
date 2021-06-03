@@ -7,8 +7,7 @@ exports.handler = async (event, context) => {
     let delete_path = '/api/rest/v2/keyspaces/todos/rest/' + body.id
     const res = await client.delete(delete_path);
     return {
-      statusCode: 200,
-      body: JSON.stringify(res),
+      statusCode: 204,
       headers: {
         'Content-Type': 'application/json'
       },

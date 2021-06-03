@@ -205,15 +205,15 @@ class App extends Component {
 				<div>
 					<div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gridGap: 50 }}>
 						<div className="todos">
-							<Header title="Doc todos" addTodo={this.actions.addDocTodo} />
+							<Header title="Doc todos" addTodo={this.actions.addDocTodo} type="doc"/>
 							<TodoList type="doc" todos={this.state.docTodos} actions={this.actions} />
 						</div>
 						<div className="todos">
-							<Header title="REST todos" addTodo={this.actions.addRestTodo} />
+							<Header title="REST todos" addTodo={this.actions.addRestTodo}  type="rest"/>
 							<TodoList type="rest" todos={this.state.restTodos} actions={this.actions} />
 						</div>
 						<div className="todos">
-							<Header title="GQ Todos" addTodo={this.actions.addGQTodo} />
+							<Header title="GQ Todos" addTodo={this.actions.addGQTodo} type="graphql"/>
 							<TodoList type="graphql" todos={this.state.GQTodos} actions={this.actions} />
 						</div>
 					</div>

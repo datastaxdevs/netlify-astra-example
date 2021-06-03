@@ -9,7 +9,7 @@ button {
 	padding: 10;
 	border: 0;
 	background: none;
-	font-size: 100%;
+	font-size: 90%;
 	vertical-align: baseline;
 	font-family: inherit;
 	font-weight: inherit;
@@ -71,10 +71,9 @@ body {
 .todoapp h1 {
 	position: absolute;
 	top: -100px;
-	font-size: 70px;
+	font-size: 50px;
 	font-weight: 200;
 	text-align: center;
-	color: #b83f45;
 	-webkit-text-rendering: optimizeLegibility;
 	-moz-text-rendering: optimizeLegibility;
 	text-rendering: optimizeLegibility;
@@ -85,7 +84,7 @@ body {
 	position: relative;
 	margin: 0;
 	width: 100%;
-	font-size: 24px;
+	font-size: 18px;
 	font-family: inherit;
 	font-weight: inherit;
 	line-height: 1.4em;
@@ -141,7 +140,7 @@ body {
 
 .css-3tmnuj {
 	font-size: 18px !important;
-	line-height: 1em
+	line-height: 1em;
 
 }
 
@@ -216,6 +215,14 @@ body {
 	color: blue
 }
 
+.doc h1 {
+	color: blue
+}
+
+.rest h1 {
+	color: green
+}
+
 .rest li.completed label {
 	color: lightgreen;
 	text-decoration: line-through;
@@ -228,6 +235,15 @@ body {
 
 .graphql li label {
 	color: red
+}
+
+.graphql h1 {
+	color: red
+}
+
+.graphql li.completed label {
+	color: pink;
+	text-decoration: line-through;
 }
 
 .todo-list li .toggle + label {
@@ -293,7 +309,7 @@ body {
 	padding: 10px 15px;
 	height: 20px;
 	text-align: center;
-	font-size: 15px;
+	font-size: 12px;
 	border-top: 1px solid #e6e6e6;
 }
 

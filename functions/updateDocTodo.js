@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
   try {
     const res = await todos.update(body.id, body);
     return {
-      statusCode: 200,
+      statusCode: 201,
       body: JSON.stringify(res),
       headers: {
         'Content-Type': 'application/json'

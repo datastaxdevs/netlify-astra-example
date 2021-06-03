@@ -13,11 +13,10 @@ exports.handler = async (event, context) => {
   let res = await client.post('/api/graphql/todos',
     {query: query})
 
-  
-  if (res.status == 201) {
+  console.log(res)
+  if (res.status == 204) {
     return {
         statusCode: res.status,
-        body: JSON.stringify(res.data),
         headers: {
           'Content-Type': 'application/json'
         },

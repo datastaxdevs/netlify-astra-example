@@ -6,8 +6,7 @@ exports.handler = async (event, context) => {
   try {
     const res = await todos.delete(body.id);
     return {
-      statusCode: 200,
-      body: JSON.stringify(res),
+      statusCode: 204,
       headers: {
         'Content-Type': 'application/json'
       },
