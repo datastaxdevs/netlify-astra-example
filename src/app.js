@@ -56,6 +56,11 @@ class App extends Component {
 		api.getRestTodos().then((restTodos) => this.setState({ restTodos }));
 	};
 
+	deleteGQTodo = async (id) => {
+		await api.deleteGQTodo(id);
+		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }))
+	};
+
 	async editDocTodo(id, text, completed) {
 		await api.updateDocTodo({
 			id,
@@ -75,11 +80,10 @@ class App extends Component {
 	};
 
 	completeGQTodo = async (id, text, completed) => {
-		completed = completed ? false : true;
-		await api.updateDocTodo({
+		await api.updateGQTodo({
 			id,
 			text,
-			completed: completed,
+			completed: !completed,
 		});
 		api.getGQTodos().then((GQTodos) => this.setState({ GQTodos }));
 	};
@@ -170,7 +174,7 @@ class App extends Component {
 	clearGQCompleted = async () => {
 		let docTodos = api.getGQTodos();
 		docTodos.forEach((todo) => {
-			this.completeGQTodo(todo.id, todo.text, true);
+			this.completeGQTodo(todo.id, todo.text, false);
 		});
 	};
 
@@ -190,6 +194,7 @@ class App extends Component {
 		getDocTodos: this.getDocTodos,
 		getRestTodos: this.getRestTodos,
 		getGQTodos: this.getGQTodos,
+		deleteGQTodo: this.deleteGQTodo,
 		deleteRestTodo: this.deleteRestTodo,
 		completeGQTodo: this.completeGQTodo,
 	};

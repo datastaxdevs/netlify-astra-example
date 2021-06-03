@@ -1,16 +1,17 @@
+
 const getDocTodos = async () => {
-  console.log('%cGetting Doc Todos', 'color: blue; font-family: arial');
+  console.log('%cGetting Doc Todos', 'color: blue; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    DOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-family: arial');
   
   const response = await fetch(`/.netlify/functions/getDocTodos`);
   let todos = await response.json()
-  console.log('%cResponse from DOC: GET /api/rest/v2/namespaces/todos/collections/doc', 'color: blue; font-family: arial')
+  console.log('%cResponse from Getting Doc Todos', 'color: blue; font-family: arial')
   console.table(todos)
   return todos.length ? todos : [];
 };
 
 const createDocTodo = async (todo) => {
-  console.log('%cCreating a new Doc Todo', 'color: blue; font-size: large');
+  console.log('%cCreating a new Doc Todo', 'color: blue; font-size: large; font-weight: bold');
   console.log(todo)
   const response = await fetch("/.netlify/functions/createDocTodo", {
     body: JSON.stringify(todo),
@@ -22,7 +23,7 @@ const createDocTodo = async (todo) => {
 };
 
 const updateDocTodo = async (todo) => {
-  console.log('%cUpdating an existing Doc Todo', 'color: blue; font-size: large');
+  console.log('%cUpdating an existing Doc Todo', 'color: blue; font-size: large; font-weight: bold');
   console.log(todo)
 
   let response = await fetch("/.netlify/functions/updateDocTodo", {
@@ -37,7 +38,7 @@ const updateDocTodo = async (todo) => {
 };
 
 const deleteDocTodo = async (id) => {
-  console.log('%cDeleting a Doc Todo', 'color: blue; font-size: large')
+  console.log('%cDeleting a Doc Todo', 'color: blue; font-size: large; font-weight: bold')
   console.log('%c    REST DELETE /api/rest/v2/namespaces/todos/rest/{id}', 'color: blue; font-family: arial')
 
   const response = await fetch("/.netlify/functions/deleteDocTodo", {
@@ -52,7 +53,7 @@ const deleteDocTodo = async (id) => {
 
 const getGQTodos = async () => {
   let body = `
-  GQ BODY: data: {
+  GQ POST Body: data: {
     query: 'query GQTodos {
          graphql (value: {key:"graphql"}) {
          values {
@@ -63,7 +64,7 @@ const getGQTodos = async () => {
     }
   }
 }`
-  console.log('%cGetting GQ Todos', 'color: red; font-family: arial');
+  console.log('%cGetting GQ Todos', 'color: red; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
   console.log('%c    ' + body, 'color: red; font-family: arial')
   const response = await fetch(`/.netlify/functions/getGQTodos`);
@@ -73,8 +74,45 @@ const getGQTodos = async () => {
   return todos.length ? todos : [];
 };
 
+const deleteGQTodo = async (id) => {
+  console.log('%cDeleting a GQ Todo', 'color: red; font-size: large; font-weight: bold')
+  console.log('%c    GQ POST /api/graphql/todos', 'color: red; font-family: arial')
+  let body = `
+  GQ POST Body: data: {
+    query: 'mutation deletegraphql {
+          graphql: deletegraphql(value: {
+             id: "${id}"
+          }) {value { text } }}`
+  console.log('%c    ' + body, 'color: red; font-family: arial')
+  
+  const response = await fetch("/.netlify/functions/deleteGQTodo", {
+    body: JSON.stringify({ id }),
+    method: "POST",
+  });
+  console.log('%cResponse from deleting an existing GQ Todo:', 'color: red; font-size: large');
+  let responsejson = await response.json();
+  console.table (responsejson);
+  
+  return responsejson;
+};
+
+const updateGQTodo = async (todo) => {
+  console.log('%cUpdating an existing GQ Todo', 'color: red; font-size: large; font-weight: bold');
+  console.log(todo)
+
+  let response = await fetch("/.netlify/functions/updateGQTodo", {
+    body: JSON.stringify(todo),
+    method: "PUT",
+  });
+  console.log('%cResponse from updating an existing GQ Todo:', 'color: red; font-size: large');
+  let responsejson = await response.json()
+  console.table (responsejson);
+  
+  return responsejson;
+};
+
 const getRestTodos = async () => {
-  console.log('%cGetting Rest Todos', 'color: green; font-family: arial');
+  console.log('%cGetting Rest Todos', 'color: green; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    REST: GET /api/rest/v2/keyspaces/todos/rest?where={"key":{"$eq":"rest"}', 'color: green; font-family: arial');
   const response = await fetch(`/.netlify/functions/getRestTodos`);
   let todos = await response.json();
@@ -85,7 +123,7 @@ const getRestTodos = async () => {
 };
 
 const addGQTodo = async (todo) => {
-  console.log('%cAdding GQ Todo', 'color: red; font-family: arial; font-weight: bold');
+  console.log('%cAdding GQ Todo', 'color: red; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
   let body = `mutation insertgraphql {
     graphql: insertgraphql(value: {
@@ -102,13 +140,14 @@ const addGQTodo = async (todo) => {
   });
   console.log('%cResponse from Adding GQ Todo', 'color: green; font-family: arial');
   
-  console.table(response.json())
+  let responsejson = response.json()
+  console.table(responsejson)
  
-  return response.json();
+  return responsejson;
 };
 
 const addRestTodo = async (todo) => {
-  console.log('%cAdding Rest Todo', 'color: green; font-family: arial; font-weight: bold');
+  console.log('%cAdding Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    REST POST /api/rest/v2/keyspaces/todos/rest/', 'color: green; font-family: arial')
 
   const response = await fetch("/.netlify/functions/createRestTodo", {
@@ -123,7 +162,7 @@ const addRestTodo = async (todo) => {
 };
 
 const updateRestTodo = async (todo) => {
-  console.log('%cUpdating Rest Todo', 'color: green; font-family: arial; font-weight: bold');
+  console.log('%cUpdating Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    REST PUT /api/rest/v2/keyspaces/todos/rest/{todo.id}', 'color: green; font-family: arial')
 
   const response = await fetch("/.netlify/functions/updateRestTodo", {
@@ -138,7 +177,7 @@ const updateRestTodo = async (todo) => {
 };
 
 const deleteRestTodo = async (id) => {
-  console.log('%Deleting Rest Todo', 'color: green; font-family: arial; font-weight: bold');
+  console.log('%Deleting Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: bold');
   console.log('%c    REST DELETE /api/rest/v2/keyspaces/todos/rest/{todo.id}', 'color: green; font-family: arial')
 
   const response = await fetch("/.netlify/functions/deleteRestTodo", {
@@ -157,6 +196,8 @@ const default_export = {
   getDocTodos,
   getGQTodos,
   addGQTodo,
+  updateGQTodo,
+  deleteGQTodo,
   createDocTodo,
   deleteDocTodo,
   updateDocTodo,

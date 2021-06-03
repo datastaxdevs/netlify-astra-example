@@ -225,10 +225,6 @@ body {
 	color: green
 }
 
-.rest li.completed label {
-	color: pink;
-	text-decoration: line-through;
-}
 
 .graphql li label {
 	color: red
