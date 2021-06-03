@@ -11,6 +11,8 @@ const getDocTodos = async () => {
 };
 
 const createDocTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cCreating a new Doc Todo', 'color: blue; font-size: large; font-weight: bold');
   console.log(todo)
   const response = await fetch("/.netlify/functions/createDocTodo", {
@@ -23,6 +25,8 @@ const createDocTodo = async (todo) => {
 };
 
 const updateDocTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cUpdating an existing Doc Todo', 'color: blue; font-size: large; font-weight: bold');
   console.log(todo)
 
@@ -38,6 +42,8 @@ const updateDocTodo = async (todo) => {
 };
 
 const deleteDocTodo = async (id) => {
+  console.clear();
+  
   console.log('%cDeleting a Doc Todo', 'color: blue; font-size: large; font-weight: bold')
   console.log('%c    REST DELETE /api/rest/v2/namespaces/todos/rest/{id}', 'color: blue; font-family: arial')
 
@@ -75,6 +81,7 @@ const getGQTodos = async () => {
 };
 
 const deleteGQTodo = async (id) => {
+  console.clear();
   console.log('%cDeleting a GQ Todo', 'color: red; font-size: large; font-weight: bold')
   console.log('%c    GQ POST /api/graphql/todos', 'color: red; font-family: arial')
   let body = `
@@ -97,6 +104,8 @@ const deleteGQTodo = async (id) => {
 };
 
 const updateGQTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cUpdating an existing GQ Todo', 'color: red; font-size: large; font-weight: bold');
   console.log(todo)
 
@@ -123,6 +132,8 @@ const getRestTodos = async () => {
 };
 
 const addGQTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cAdding GQ Todo', 'color: red; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    GQ: POST /api/graphql/todos', 'color: red; font-family: arial')
   let body = `mutation insertgraphql {
@@ -147,6 +158,8 @@ const addGQTodo = async (todo) => {
 };
 
 const addRestTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cAdding Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    REST POST /api/rest/v2/keyspaces/todos/rest/', 'color: green; font-family: arial')
 
@@ -162,6 +175,8 @@ const addRestTodo = async (todo) => {
 };
 
 const updateRestTodo = async (todo) => {
+  console.clear();
+  
   console.log('%cUpdating Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: large');
   console.log('%c    REST PUT /api/rest/v2/keyspaces/todos/rest/{todo.id}', 'color: green; font-family: arial')
 
@@ -177,6 +192,8 @@ const updateRestTodo = async (todo) => {
 };
 
 const deleteRestTodo = async (id) => {
+  console.clear();
+  
   console.log('%Deleting Rest Todo', 'color: green; font-family: arial; font-weight: bold; font-size: bold');
   console.log('%c    REST DELETE /api/rest/v2/keyspaces/todos/rest/{todo.id}', 'color: green; font-family: arial')
 
