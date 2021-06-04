@@ -58,7 +58,7 @@ const deleteDocTodo = async (id) => {
 
 const getGQTodos = async () => {
   let body = `GQ POST /api/graphql/todos
-    Body: data: {
+    data: {
     query: 'query GQTodos {
          graphql (value: {key:"graphql"}) {
          values {
@@ -82,8 +82,7 @@ const deleteGQTodo = async (id) => {
   
   console.log('%cDeleting a GQ Todo', 'color: red; font-size: large; font-weight: bold;font-family: arial')
   console.log('%c    GQ POST /api/graphql/todos', 'color: red; font-family: arial')
-  let body = `
-  GQ POST Body: data: {
+  let body = `data: {
     query: 'mutation deletegraphql {
           graphql: deletegraphql(value: {
              id: "${id}"
