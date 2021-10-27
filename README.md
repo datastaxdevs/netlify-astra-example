@@ -50,75 +50,89 @@ Click the button to login or register with Datastax.
 </details>
 
 - Click the button to deploy:
-  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/synedra/netlify-astra-example)
+  [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/datastaxdevs/netlify-astra-example)
  * <details><summary>Show me!</summary>
     <img src="https://github.com/datastaxdevs/workshop-spring-stargate/raw/main/images/tutorials/astra-create-token.gif?raw=true" />
     </details>
 
-This will take a few minutes.
-
-  * Click on `Site deploy in progress`, 
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-1.png" />
-    </details>
-
-  * Click the top deploy link to see the build process.
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-2.png" />
-    </details>
-
-  * Wait until the build complete `Netlify Build Complete`,  **When you see Pushing to repository** you're ready to move on.
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-3.png" />
-    </details>
-
-  * Scroll up to the top and click on the site name (it'll be after {yourlogin}'s Team next to the Netlify button).
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-4.png" />
-    </details>
-
-3. **Clone your GitHub repository**
+### 3. Access YOUR GitHub repository
 
   * Click on the `GitHub` in `Deploys from GitHub` to get back to your new repository.  Scroll to where you were in the README.
     <details>
     <summary>Show me! </summary>
-    <img src="/images/deploy-5.png" />
+    <img src="tutorial/images/deploy-5.png" />
     </details>
 
-  * Clone this repository to your local system by clicking the `Code` button, 
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-6.png" />
-    </details>
+### 4. Launch GitPod IDE
+- Click the button to launch the GitPod IDE from **YOUR** repository.
 
-  * Copying the link, and running in a terminal
-    ```bash
-    git clone {repo_link}
-    ```
-    <details>
-    <summary>Show me! </summary>
-    <img src="/images/deploy-7.png" />
-    </details>
+* _Supported by <img src="tutorial/images/chrome-logo.svg" height="20"/> Chrome and <img src="tutorial/images/firefox-logo.svg" height="20"/> Firefox_
 
-  * Change into your repository directory 
-  ```bash
-  cd netlify-astra-example
-  ```
+#### WAIT! Before moving on ensure you are working out of YOUR repository, not the datastaxdevs repository.
 
-7. In the repository directory
+![correct notcorrect](tutorial/images/correct-not-correct.png?raw=true)
 
-```bash
-npm install
-npm install -g netlify-cli
+If you are still using the `datastaxdevs` repo please ensure to follow the previous step, [step3](#3-clone-your-github-repository) to get to your repo.
+
+ * Ok, I've got it, just give me the button already
+ * <details>
+     <summary>CLICK HERE to launch GitPod</summary>
+
+     [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/from-referrer/)
+   </details>
+   
+#### WAIT! Before moving on ensure you are working out of YOUR repository, not the datastaxdevs repository.
+* From your GitPod terminal execute the following command
+```
+git remote -v
 ```
 
-8. In the repository directory run the following command  to set up your Astra environment.  Note that this does require Node 15 and NPM 7 to work.  You can install a node version manager like `nvm` or `n` to use multiple versions on your system.
+If the result returned from the command displays **`datastaxdevs`** then you are not in the correct repository. If this is the case please [repeat step 3 above](#3-access-your-github-repository), otherwise just move on to the next step.
+
+### 5. Install the Netlify CLI (Command Line Interface)
+ * In the `workshop-astra-tik-tok` directory run the following command to install the netlify-cli
+ ```
+ npm install -g netlify-cli
 ```
-npm exec astra-setup netlify todos
+ * <details><summary>Show me!</summary>
+    <img src="tutorial/images/netlify-install-cli.png?raw=true" />
+    </details>
+
+### 6. Generate application token to securely connect to the database
+
+Following the [Documentation](https://docs.datastax.com/en/astra/docs/manage-application-tokens.html) create a token with `Database Admnistrator` roles.
+
+- Go the `Organization Settings`
+
+- Go to `Token Management`
+
+- Pick the role `Database Admnistrator` on the select box
+
+- Click Generate token
+
+ * <details><summary>Show me!</summary>
+    <img src="tutorial/images/astra-create-token.gif?raw=true" />
+    </details>
+
+This is what the token page looks like. 
+ * Click the **`Download CSV`** button. You are going to need these values here in a moment.
+
+![image](tutorial/images/astra-token.png?raw=true)
+
+Notice the clipboard icon at the end of each value.
+
+- `Client ID:` We will *not* use this during this workshop
+
+- `Client Secret:` We will *not* use this during this workshop
+
+- `Token:` *This is your token!* We will use it as a api Key to interact with APIS
+
+[This video](https://www.youtube.com/watch?v=TUTCLsBuUd4) describes the procedure to generate a token in Astra DB.
+
+### 7. Configure and connect database
+ * In the repository directory run the following command to set up your Astra DB environment. This will verify the database you created earlier or create a new one for you if it can't find your database.
+ ```
+ npm exec astra-setup tiktok_workshop_db tiktok_keyspace
 ```
 
 <details>
@@ -126,7 +140,7 @@ npm exec astra-setup netlify todos
     To setup your ASTRA instance, you want to run `npm exec astra-setup`
 
     This will do the following:
-    * Have you go to your [Astra Database](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
+    * Have you go to your [Astra DB instance](https://datastx.io/workshops) to register or login. There is no credit card required to sign up. The 'Pay as you go' option gives you a huge amount of transactions for free:
         * 30 million reads
         * 5 million writes
         * 40 gigabytes of storage
@@ -143,18 +157,58 @@ npm exec astra-setup netlify todos
     `npm exec astra-setup databasename keyspacename`
 </details>
 
+### 8. Launch your app
+  * Run the application 
+  ```
+  netlify dev
+  ```
+  * The application should automatically launch in the GitPod preview pane
 
-9. Next you will run some commands to connect netlify to your site.
-      * `npm install -g netlify-cli`
-      * `netlify login` - this will pop up a browser to authenticate with netlify.  
-      * `netlify link` - this will link your workspace to the associated site
-      * `netlify env:import .env` - this will take the .env file created by astra-setup and upload it to netlify.
-      * Run the application `netlify dev` and open http://localhost:8080 to view your application:
-      * `netlify deploy`
-      * `netlify open:site` - will launch a browser with your new site on Netlify
+### 9. Connect Netlify to your site
+Execute each of the commands below to link your code to your Netlify deployment.
+  * First thing, we'll need to **STOP** the `netlify dev` command we issued a moment ago. In the terminal where you executed the netlify command issue a `CTRL-C` (control key + the C key) in order to stop the process.
+  * Then continue with the following commands
+  * This will pop up a browser to authenticate with netlify
+  ```
+  netlify login
+  ```
+  _Note, when using GitPod the preview pane will not display this properly. You must click the "open in a new window" button in the very top right of the preview pane._
 
+  * This will link your workspace to the associated site
+  ```
+  netlify link
+  ```
 
-### Things to Note:
- - The contents of this repo are based on [Jake's port](https://github.com/tjake/todo-astra-react-serverless/) of the [TodoMVC code](https://github.com/tastejs/todomvc/tree/master/examples/react) originally written by [Pete Hunt](https://github.com/petehunt).
- - The example is modified from https://github.com/huksley/todo-react-ssr-serverless.
-<!--- ENDEXCLUDE --->
+  * This will take the .env file created by astra-setup and upload it to netlify
+  ```
+  netlify env:import .env
+  ```
+
+<!--
+  * Will be used to allow you to execute `netlify open`
+  ```
+  netlify sites:list
+  ```
+-->
+
+### 10. Deploy to production
+Now that you've hooked everything up, time to deploy to production.
+
+  * Run
+  ```
+  netlify build
+  ```
+
+  * Then run
+  ```
+  netlify deploy --prod
+  ```
+
+  * Then finally run
+  ```
+  netlify open:site
+  ```
+  
+  You've deployed your app to Netlify!
+  ![Netlify Setup Example](./tutorial/images/netlify-livesite.png?raw=true)
+
